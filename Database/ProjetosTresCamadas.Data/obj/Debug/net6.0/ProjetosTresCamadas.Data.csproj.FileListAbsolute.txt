@@ -1,0 +1,15 @@
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\bin\Debug\net6.0\ProjetosTresCamadas.Data.dll.config
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\bin\Debug\net6.0\ProjetosTresCamadas.Data.deps.json
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\bin\Debug\net6.0\ProjetosTresCamadas.Data.runtimeconfig.json
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\bin\Debug\net6.0\ProjetosTresCamadas.Data.dll
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\bin\Debug\net6.0\ProjetosTresCamadas.Data.pdb
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\ProjetosTresCamadas.Data.csproj.AssemblyReference.cache
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\ProjetosTresCamadas.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\ProjetosTresCamadas.Data.AssemblyInfoInputs.cache
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\ProjetosTresCamadas.Data.AssemblyInfo.cs
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\ProjetosTresCamadas.Data.csproj.CoreCompileInputs.cache
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\ProjetosTresCamadas.Data.dll
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\refint\ProjetosTresCamadas.Data.dll
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\ProjetosTresCamadas.Data.pdb
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\ProjetosTresCamadas.Data.genruntimeconfig.cache
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\ref\ProjetosTresCamadas.Data.dll
