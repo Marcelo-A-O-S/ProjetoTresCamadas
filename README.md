@@ -1,4 +1,4 @@
-# Projeto Três Camadas
+# Projeto três camadas MVC
 
  Esse projeto foi feito pensando em aprimorar minhas técnicas de programação e estruturação de projetos para ter noção de como aplicar em ambientes mais reais!
  Foi desenvolvido usando as seguintes tecnologias: C# e Windows Form.
