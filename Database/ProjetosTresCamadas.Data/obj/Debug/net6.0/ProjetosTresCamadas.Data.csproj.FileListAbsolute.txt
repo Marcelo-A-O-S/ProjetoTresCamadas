@@ -13,3 +13,6 @@ C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\refint\
 C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\ProjetosTresCamadas.Data.pdb
 C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\ProjetosTresCamadas.Data.genruntimeconfig.cache
 C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\ref\ProjetosTresCamadas.Data.dll
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\obj\Debug\net6.0\ProjetosTresCamadas.Data.csproj.CopyComplete
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\bin\Debug\net6.0\DTO.dll
+C:\ProjetoTresCamadas\Database\ProjetosTresCamadas.Data\bin\Debug\net6.0\DTO.pdb

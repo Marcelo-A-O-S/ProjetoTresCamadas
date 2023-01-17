@@ -1155,6 +1155,16 @@
             "rid": "win"
           }
         }
+      },
+      "DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTO.dll": {}
+        }
       }
     }
   },
@@ -3500,10 +3510,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "DTO/1.0.0": {
+      "type": "project",
+      "path": "../../DTO/Entidades/DTO.csproj",
+      "msbuildProject": "../../DTO/Entidades/DTO.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "DTO >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.1",
@@ -3542,7 +3558,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\ProjetoTresCamadas\\DTO\\Entidades\\DTO.csproj": {
+              "projectPath": "C:\\ProjetoTresCamadas\\DTO\\Entidades\\DTO.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -23,7 +23,8 @@ namespace WinFormsUI
             DropdownFuncionarios.Visible = false;
             DropdownProdutos.Visible = false;
             DropdownFornecedores.Visible = false;
-
+            DropdownVendas.Visible = false;
+            DropdownCompras.Visible = false;
         }
         private void MostrarForm(Form Frm)
         {
@@ -58,6 +59,14 @@ namespace WinFormsUI
             if (DropdownProdutos.Visible == true)
             {
                 DropdownProdutos.Visible = false;
+            }
+            if (DropdownVendas.Visible == true)
+            {
+                DropdownVendas.Visible = false;
+            }
+            if (DropdownCompras.Visible == true)
+            {
+                DropdownCompras.Visible = false;
             }
 
         }
@@ -133,6 +142,46 @@ namespace WinFormsUI
         private void btnFornecedorRegistrar_Click(object sender, EventArgs e)
         {
             MostrarForm(new FrmRegistrarFornecedor());
+        }
+
+        private void btnGerenciarCategoria_Click(object sender, EventArgs e)
+        {
+            MostrarForm(new FrmGerenciarCategoria());
+        }
+
+        private void btnGerenciarProduto_Click(object sender, EventArgs e)
+        {
+            MostrarForm(new FrmGerenciarProdutos());
+        }
+
+        private void btnVendas_Click(object sender, EventArgs e)
+        {
+            OpenDropdown(DropdownVendas);
+        }
+
+        private void btnGerenciarVendas_Click(object sender, EventArgs e)
+        {
+            MostrarForm(new FrmGerenciarVendas());
+        }
+
+        private void btnRegistroVendas_Click(object sender, EventArgs e)
+        {
+            MostrarForm(new FrmRegistroVendas());
+        }
+
+        private void btnGerenciarVendasParceladas_Click(object sender, EventArgs e)
+        {
+            MostrarForm(new FrmGerenciarVendasParceladas());
+        }
+
+        private void btnBuscarVendaCliente_Click(object sender, EventArgs e)
+        {
+            MostrarForm(new FrmBuscarVendaCliente());
+        }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            OpenDropdown(DropdownCompras);
         }
     }
 }

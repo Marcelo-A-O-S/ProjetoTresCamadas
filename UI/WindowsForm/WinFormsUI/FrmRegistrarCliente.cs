@@ -1,14 +1,5 @@
 ﻿using ProjetoTresCamadas.Bussines.Services;
-using ProjetosTresCamadas.Data.Entidades;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using ProjetoTresCamadas.DTO.Entidades;
 
 namespace WinFormsUI
 {
@@ -21,38 +12,38 @@ namespace WinFormsUI
             InitializeComponent();
         }
 
-        private async void FrmRegistrarCliente_Load(object sender, EventArgs e)
+        private void FrmRegistrarCliente_Load(object sender, EventArgs e)
         {
             dataGridViewClientes.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridViewClientes.MultiSelect = false;
-            dataGridViewClientes.ColumnCount = 8;
+            dataGridViewClientes.ColumnCount = 9;
             dataGridViewClientes.Columns[0].HeaderText = "Id";
             dataGridViewClientes.Columns[0].DataPropertyName = "Id";
             dataGridViewClientes.Columns[0].Name = "Id";
-            dataGridViewClientes.Columns[0].HeaderText = "Nome";
-            dataGridViewClientes.Columns[0].DataPropertyName = "Nome";
-            dataGridViewClientes.Columns[0].Name = "Nome";
-            dataGridViewClientes.Columns[1].HeaderText = "CPF";
-            dataGridViewClientes.Columns[1].DataPropertyName = "CPF";
-            dataGridViewClientes.Columns[1].Name = "CPF";
-            dataGridViewClientes.Columns[2].HeaderText = "Telefone";
-            dataGridViewClientes.Columns[2].DataPropertyName = "Telefone";
-            dataGridViewClientes.Columns[2].Name = "Telefone";
-            dataGridViewClientes.Columns[3].HeaderText = "Cidade";
-            dataGridViewClientes.Columns[3].DataPropertyName = "Cidade";
-            dataGridViewClientes.Columns[3].Name = "Cidade";
-            dataGridViewClientes.Columns[4].HeaderText = "Rua";
-            dataGridViewClientes.Columns[4].DataPropertyName = "Rua";
-            dataGridViewClientes.Columns[4].Name = "Rua";
-            dataGridViewClientes.Columns[5].HeaderText = "Bairro";
-            dataGridViewClientes.Columns[5].DataPropertyName = "Bairro";
-            dataGridViewClientes.Columns[5].Name = "Bairro";
-            dataGridViewClientes.Columns[6].HeaderText = "Numero da Casa";
-            dataGridViewClientes.Columns[6].DataPropertyName = "Numeracao";
-            dataGridViewClientes.Columns[6].Name = "Numero da Casa";
-            dataGridViewClientes.Columns[7].HeaderText = "CEP";
-            dataGridViewClientes.Columns[7].DataPropertyName = "CEP";
-            dataGridViewClientes.Columns[7].Name = "CEP";
+            dataGridViewClientes.Columns[1].HeaderText = "Nome";
+            dataGridViewClientes.Columns[1].DataPropertyName = "Nome";
+            dataGridViewClientes.Columns[1].Name = "Nome";
+            dataGridViewClientes.Columns[2].HeaderText = "CPF";
+            dataGridViewClientes.Columns[2].DataPropertyName = "CPF";
+            dataGridViewClientes.Columns[2].Name = "CPF";
+            dataGridViewClientes.Columns[3].HeaderText = "Telefone";
+            dataGridViewClientes.Columns[3].DataPropertyName = "Telefone";
+            dataGridViewClientes.Columns[3].Name = "Telefone";
+            dataGridViewClientes.Columns[4].HeaderText = "Cidade";
+            dataGridViewClientes.Columns[4].DataPropertyName = "Cidade";
+            dataGridViewClientes.Columns[4].Name = "Cidade";
+            dataGridViewClientes.Columns[5].HeaderText = "Rua";
+            dataGridViewClientes.Columns[5].DataPropertyName = "Rua";
+            dataGridViewClientes.Columns[5].Name = "Rua";
+            dataGridViewClientes.Columns[6].HeaderText = "Bairro";
+            dataGridViewClientes.Columns[6].DataPropertyName = "Bairro";
+            dataGridViewClientes.Columns[6].Name = "Bairro";
+            dataGridViewClientes.Columns[7].HeaderText = "Numero da Casa";
+            dataGridViewClientes.Columns[7].DataPropertyName = "Numeracao";
+            dataGridViewClientes.Columns[7].Name = "Numero da Casa";
+            dataGridViewClientes.Columns[8].HeaderText = "CEP";
+            dataGridViewClientes.Columns[8].DataPropertyName = "CEP";
+            dataGridViewClientes.Columns[8].Name = "CEP";
             RecarregarGrid();
            
         }

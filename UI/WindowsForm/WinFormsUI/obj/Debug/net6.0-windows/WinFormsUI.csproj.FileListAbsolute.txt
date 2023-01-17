@@ -71,3 +71,12 @@ C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinForm
 C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmListagemClientes.resources
 C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmRegistrarFuncionario.resources
 C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmRegistrarFornecedor.resources
+C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmGerenciarCategoria.resources
+C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmGerenciarProdutos.resources
+C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\bin\Debug\net6.0-windows\DTO.dll
+C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\bin\Debug\net6.0-windows\DTO.pdb
+C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmGerenciarVendas.resources
+C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmRegistroVendas.resources
+C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmGerenciarVendasParceladas.resources
+C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmBuscarVendaCliente.resources
+C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmGerenciarCompras.resources

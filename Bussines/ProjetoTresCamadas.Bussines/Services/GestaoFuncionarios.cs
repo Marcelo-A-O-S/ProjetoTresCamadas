@@ -1,5 +1,6 @@
-﻿using ProjetosTresCamadas.Data.Entidades;
+﻿
 using ProjetosTresCamadas.Data.Reposity;
+using ProjetoTresCamadas.DTO.Entidades;
 using System.Linq.Expressions;
 
 namespace ProjetoTresCamadas.Bussines.Services
@@ -54,9 +55,9 @@ namespace ProjetoTresCamadas.Bussines.Services
         {
             return await GestaoFuncionarioRepository.ObterTodos();
         }
-        public Funcionario BuscarFuncionarioPor(Expression<Func<Funcionario, bool>> predicado)
+        public async Task<Funcionario> BuscarFuncionarioPor(Expression<Func<Funcionario, bool>> predicado)
         {
-            return GestaoFuncionarioRepository.BuscarPor(predicado).FirstOrDefault();
+            return await GestaoFuncionarioRepository.BuscarPor(predicado);
         }
     }
 }

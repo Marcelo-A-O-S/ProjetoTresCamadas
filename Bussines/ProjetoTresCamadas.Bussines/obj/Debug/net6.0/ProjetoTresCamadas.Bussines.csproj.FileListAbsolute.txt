@@ -16,3 +16,5 @@ C:\ProjetoTresCamadas\Bussines\ProjetoTresCamadas.Bussines\obj\Debug\net6.0\Proj
 C:\ProjetoTresCamadas\Bussines\ProjetoTresCamadas.Bussines\obj\Debug\net6.0\ref\ProjetoTresCamadas.Bussines.dll
 C:\ProjetoTresCamadas\Bussines\ProjetoTresCamadas.Bussines\bin\Debug\net6.0\ProjetoTresCamadas.Bussines.runtimeconfig.json
 C:\ProjetoTresCamadas\Bussines\ProjetoTresCamadas.Bussines\obj\Debug\net6.0\ProjetoTresCamadas.Bussines.genruntimeconfig.cache
+C:\ProjetoTresCamadas\Bussines\ProjetoTresCamadas.Bussines\bin\Debug\net6.0\DTO.dll
+C:\ProjetoTresCamadas\Bussines\ProjetoTresCamadas.Bussines\bin\Debug\net6.0\DTO.pdb

@@ -1,11 +1,7 @@
 ﻿using ProjetosTresCamadas.Data.Reposity;
-using ProjetosTresCamadas.Data.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ProjetoTresCamadas.DTO.Entidades;
 using System.Linq.Expressions;
+
 
 namespace ProjetoTresCamadas.Bussines.Services
 {
@@ -55,9 +51,9 @@ namespace ProjetoTresCamadas.Bussines.Services
             }
             return Erro;
         }
-        public Fornecedor ObterFornecedorPor(Expression<Func<Fornecedor, bool>> predicado)
+        public async Task<Fornecedor> ObterFornecedorPor(Expression<Func<Fornecedor, bool>> predicado)
         {
-            return fornecedoresRepository.BuscarPor(predicado).FirstOrDefault();
+            return await fornecedoresRepository.BuscarPor(predicado);
         }
         public async Task<IList<Fornecedor>> ObterFornecedores()
         {

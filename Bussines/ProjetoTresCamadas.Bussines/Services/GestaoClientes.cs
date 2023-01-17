@@ -1,8 +1,7 @@
-﻿using ProjetosTresCamadas.Data.Entidades;
+﻿
 
 using ProjetosTresCamadas.Data.Reposity;
-//using ProjetoTresCamadas.Bussines.Entidades;
-
+using ProjetoTresCamadas.DTO.Entidades;
 using System.Linq.Expressions;
 
 namespace ProjetoTresCamadas.Bussines.Services
@@ -61,9 +60,9 @@ namespace ProjetoTresCamadas.Bussines.Services
                 var clientes = await Cliente.ObterTodos();
                 return clientes;
         }
-        public Cliente BuscarCliente(Expression<Func<Cliente, bool>> predicado)
+        public async Task<Cliente> BuscarCliente(Expression<Func<Cliente, bool>> predicado)
         {
-            return Cliente.BuscarPor(predicado).FirstOrDefault();
+            return await Cliente.BuscarPor(predicado);
         }
 
         public void Dispose()

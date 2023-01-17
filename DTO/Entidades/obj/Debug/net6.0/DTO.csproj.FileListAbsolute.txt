@@ -1,0 +1,12 @@
+C:\ProjetoTresCamadas\DTO\Entidades\bin\Debug\net6.0\DTO.deps.json
+C:\ProjetoTresCamadas\DTO\Entidades\bin\Debug\net6.0\DTO.dll
+C:\ProjetoTresCamadas\DTO\Entidades\bin\Debug\net6.0\DTO.pdb
+C:\ProjetoTresCamadas\DTO\Entidades\obj\Debug\net6.0\DTO.csproj.AssemblyReference.cache
+C:\ProjetoTresCamadas\DTO\Entidades\obj\Debug\net6.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjetoTresCamadas\DTO\Entidades\obj\Debug\net6.0\DTO.AssemblyInfoInputs.cache
+C:\ProjetoTresCamadas\DTO\Entidades\obj\Debug\net6.0\DTO.AssemblyInfo.cs
+C:\ProjetoTresCamadas\DTO\Entidades\obj\Debug\net6.0\DTO.csproj.CoreCompileInputs.cache
+C:\ProjetoTresCamadas\DTO\Entidades\obj\Debug\net6.0\DTO.dll
+C:\ProjetoTresCamadas\DTO\Entidades\obj\Debug\net6.0\refint\DTO.dll
+C:\ProjetoTresCamadas\DTO\Entidades\obj\Debug\net6.0\DTO.pdb
+C:\ProjetoTresCamadas\DTO\Entidades\obj\Debug\net6.0\ref\DTO.dll

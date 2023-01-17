@@ -25,12 +25,12 @@ namespace ProjetosTresCamadas.Data.GenericRepository
             
         }
 
-        public IQueryable<T> BuscarPor(Expression<Func<T, bool>> predicate)
+        public async Task<T> BuscarPor(Expression<Func<T, bool>> predicate)
         {
             using (var db = new AppDbContext())
             {
                 IQueryable<T> busca = db.Set<T>().Where(predicate);
-                return busca;
+                return busca.Where(predicate).FirstOrDefault();
             }
                 
         }

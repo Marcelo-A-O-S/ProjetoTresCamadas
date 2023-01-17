@@ -30,39 +30,43 @@
         {
             this.Menu = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.DropdownCompras = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnGerenciarCompras = new System.Windows.Forms.Button();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.btnCompras = new System.Windows.Forms.Button();
+            this.DropdownVendas = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnBuscarVendaCliente = new System.Windows.Forms.Button();
+            this.btnGerenciarVendas = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.btnGerenciarVendasParceladas = new System.Windows.Forms.Button();
+            this.btnRegistroVendas = new System.Windows.Forms.Button();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.btnVendas = new System.Windows.Forms.Button();
             this.DropdownProdutos = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnGerenciarProduto = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.panel18 = new System.Windows.Forms.Panel();
+            this.btnGerenciarCategoria = new System.Windows.Forms.Button();
             this.btnProdutos = new System.Windows.Forms.Button();
             this.DropdownFornecedores = new System.Windows.Forms.Panel();
             this.btnFornecedorRegistrar = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.panel14 = new System.Windows.Forms.Panel();
             this.btnFornecedores = new System.Windows.Forms.Button();
             this.DropdownFuncionarios = new System.Windows.Forms.Panel();
             this.btnFuncionarioRegistrar = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.btnFuncionarios = new System.Windows.Forms.Button();
             this.DropdownCliente = new System.Windows.Forms.Panel();
             this.btnClienteGerenciar = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.btnClienteListar = new System.Windows.Forms.Button();
-            this.btnClienteRemove = new System.Windows.Forms.Button();
-            this.panel19 = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -72,6 +76,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Menu.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.DropdownCompras.SuspendLayout();
+            this.DropdownVendas.SuspendLayout();
             this.DropdownProdutos.SuspendLayout();
             this.DropdownFornecedores.SuspendLayout();
             this.DropdownFuncionarios.SuspendLayout();
@@ -96,6 +102,10 @@
             // panel4
             // 
             this.panel4.AutoScroll = true;
+            this.panel4.Controls.Add(this.DropdownCompras);
+            this.panel4.Controls.Add(this.btnCompras);
+            this.panel4.Controls.Add(this.DropdownVendas);
+            this.panel4.Controls.Add(this.btnVendas);
             this.panel4.Controls.Add(this.DropdownProdutos);
             this.panel4.Controls.Add(this.btnProdutos);
             this.panel4.Controls.Add(this.DropdownFornecedores);
@@ -111,66 +121,301 @@
             this.panel4.Size = new System.Drawing.Size(315, 585);
             this.panel4.TabIndex = 2;
             // 
+            // DropdownCompras
+            // 
+            this.DropdownCompras.Controls.Add(this.panel22);
+            this.DropdownCompras.Controls.Add(this.button1);
+            this.DropdownCompras.Controls.Add(this.btnGerenciarCompras);
+            this.DropdownCompras.Controls.Add(this.panel23);
+            this.DropdownCompras.Controls.Add(this.panel24);
+            this.DropdownCompras.Controls.Add(this.button5);
+            this.DropdownCompras.Controls.Add(this.button7);
+            this.DropdownCompras.Controls.Add(this.panel25);
+            this.DropdownCompras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DropdownCompras.Location = new System.Drawing.Point(0, 995);
+            this.DropdownCompras.Name = "DropdownCompras";
+            this.DropdownCompras.Size = new System.Drawing.Size(294, 258);
+            this.DropdownCompras.TabIndex = 32;
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.Blue;
+            this.panel22.Location = new System.Drawing.Point(13, 192);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(12, 57);
+            this.panel22.TabIndex = 35;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(25, 192);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(178, 57);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Buscar Compras por Fornecedor";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnGerenciarCompras
+            // 
+            this.btnGerenciarCompras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGerenciarCompras.FlatAppearance.BorderSize = 0;
+            this.btnGerenciarCompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnGerenciarCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnGerenciarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGerenciarCompras.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGerenciarCompras.ForeColor = System.Drawing.Color.White;
+            this.btnGerenciarCompras.Location = new System.Drawing.Point(25, 3);
+            this.btnGerenciarCompras.Name = "btnGerenciarCompras";
+            this.btnGerenciarCompras.Size = new System.Drawing.Size(178, 57);
+            this.btnGerenciarCompras.TabIndex = 28;
+            this.btnGerenciarCompras.Text = "Gerenciar Compras";
+            this.btnGerenciarCompras.UseVisualStyleBackColor = true;
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.Color.Blue;
+            this.panel23.Location = new System.Drawing.Point(13, 129);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(12, 57);
+            this.panel23.TabIndex = 33;
+            // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.Color.Blue;
+            this.panel24.Location = new System.Drawing.Point(13, 3);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(12, 57);
+            this.panel24.TabIndex = 29;
+            // 
+            // button5
+            // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(25, 129);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(178, 57);
+            this.button5.TabIndex = 32;
+            this.button5.Text = "Gerenciar Compras Parceladas";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(25, 66);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(178, 57);
+            this.button7.TabIndex = 30;
+            this.button7.Text = "Registro de Compras";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // panel25
+            // 
+            this.panel25.BackColor = System.Drawing.Color.Blue;
+            this.panel25.Location = new System.Drawing.Point(13, 66);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(12, 57);
+            this.panel25.TabIndex = 31;
+            // 
+            // btnCompras
+            // 
+            this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCompras.FlatAppearance.BorderSize = 0;
+            this.btnCompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompras.ForeColor = System.Drawing.Color.White;
+            this.btnCompras.Location = new System.Drawing.Point(0, 938);
+            this.btnCompras.Name = "btnCompras";
+            this.btnCompras.Size = new System.Drawing.Size(294, 57);
+            this.btnCompras.TabIndex = 31;
+            this.btnCompras.Text = "Compras";
+            this.btnCompras.UseVisualStyleBackColor = true;
+            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
+            // 
+            // DropdownVendas
+            // 
+            this.DropdownVendas.Controls.Add(this.panel8);
+            this.DropdownVendas.Controls.Add(this.btnBuscarVendaCliente);
+            this.DropdownVendas.Controls.Add(this.btnGerenciarVendas);
+            this.DropdownVendas.Controls.Add(this.panel15);
+            this.DropdownVendas.Controls.Add(this.panel20);
+            this.DropdownVendas.Controls.Add(this.btnGerenciarVendasParceladas);
+            this.DropdownVendas.Controls.Add(this.btnRegistroVendas);
+            this.DropdownVendas.Controls.Add(this.panel21);
+            this.DropdownVendas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DropdownVendas.Location = new System.Drawing.Point(0, 680);
+            this.DropdownVendas.Name = "DropdownVendas";
+            this.DropdownVendas.Size = new System.Drawing.Size(294, 258);
+            this.DropdownVendas.TabIndex = 30;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Blue;
+            this.panel8.Location = new System.Drawing.Point(13, 192);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(12, 57);
+            this.panel8.TabIndex = 35;
+            // 
+            // btnBuscarVendaCliente
+            // 
+            this.btnBuscarVendaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarVendaCliente.FlatAppearance.BorderSize = 0;
+            this.btnBuscarVendaCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnBuscarVendaCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnBuscarVendaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarVendaCliente.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscarVendaCliente.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarVendaCliente.Location = new System.Drawing.Point(25, 192);
+            this.btnBuscarVendaCliente.Name = "btnBuscarVendaCliente";
+            this.btnBuscarVendaCliente.Size = new System.Drawing.Size(178, 57);
+            this.btnBuscarVendaCliente.TabIndex = 34;
+            this.btnBuscarVendaCliente.Text = "Buscar Venda por Cliente";
+            this.btnBuscarVendaCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarVendaCliente.Click += new System.EventHandler(this.btnBuscarVendaCliente_Click);
+            // 
+            // btnGerenciarVendas
+            // 
+            this.btnGerenciarVendas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGerenciarVendas.FlatAppearance.BorderSize = 0;
+            this.btnGerenciarVendas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnGerenciarVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnGerenciarVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGerenciarVendas.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGerenciarVendas.ForeColor = System.Drawing.Color.White;
+            this.btnGerenciarVendas.Location = new System.Drawing.Point(25, 3);
+            this.btnGerenciarVendas.Name = "btnGerenciarVendas";
+            this.btnGerenciarVendas.Size = new System.Drawing.Size(178, 57);
+            this.btnGerenciarVendas.TabIndex = 28;
+            this.btnGerenciarVendas.Text = "Gerenciar Vendas";
+            this.btnGerenciarVendas.UseVisualStyleBackColor = true;
+            this.btnGerenciarVendas.Click += new System.EventHandler(this.btnGerenciarVendas_Click);
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.Blue;
+            this.panel15.Location = new System.Drawing.Point(13, 129);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(12, 57);
+            this.panel15.TabIndex = 33;
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.Blue;
+            this.panel20.Location = new System.Drawing.Point(13, 3);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(12, 57);
+            this.panel20.TabIndex = 29;
+            // 
+            // btnGerenciarVendasParceladas
+            // 
+            this.btnGerenciarVendasParceladas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGerenciarVendasParceladas.FlatAppearance.BorderSize = 0;
+            this.btnGerenciarVendasParceladas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnGerenciarVendasParceladas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnGerenciarVendasParceladas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGerenciarVendasParceladas.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGerenciarVendasParceladas.ForeColor = System.Drawing.Color.White;
+            this.btnGerenciarVendasParceladas.Location = new System.Drawing.Point(25, 129);
+            this.btnGerenciarVendasParceladas.Name = "btnGerenciarVendasParceladas";
+            this.btnGerenciarVendasParceladas.Size = new System.Drawing.Size(178, 57);
+            this.btnGerenciarVendasParceladas.TabIndex = 32;
+            this.btnGerenciarVendasParceladas.Text = "Gerenciar Vendas Parceladas";
+            this.btnGerenciarVendasParceladas.UseVisualStyleBackColor = true;
+            this.btnGerenciarVendasParceladas.Click += new System.EventHandler(this.btnGerenciarVendasParceladas_Click);
+            // 
+            // btnRegistroVendas
+            // 
+            this.btnRegistroVendas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistroVendas.FlatAppearance.BorderSize = 0;
+            this.btnRegistroVendas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnRegistroVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnRegistroVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistroVendas.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRegistroVendas.ForeColor = System.Drawing.Color.White;
+            this.btnRegistroVendas.Location = new System.Drawing.Point(25, 66);
+            this.btnRegistroVendas.Name = "btnRegistroVendas";
+            this.btnRegistroVendas.Size = new System.Drawing.Size(178, 57);
+            this.btnRegistroVendas.TabIndex = 30;
+            this.btnRegistroVendas.Text = "Registro de Vendas";
+            this.btnRegistroVendas.UseVisualStyleBackColor = true;
+            this.btnRegistroVendas.Click += new System.EventHandler(this.btnRegistroVendas_Click);
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.Blue;
+            this.panel21.Location = new System.Drawing.Point(13, 66);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(12, 57);
+            this.panel21.TabIndex = 31;
+            // 
+            // btnVendas
+            // 
+            this.btnVendas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVendas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVendas.FlatAppearance.BorderSize = 0;
+            this.btnVendas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVendas.ForeColor = System.Drawing.Color.White;
+            this.btnVendas.Location = new System.Drawing.Point(0, 623);
+            this.btnVendas.Name = "btnVendas";
+            this.btnVendas.Size = new System.Drawing.Size(294, 57);
+            this.btnVendas.TabIndex = 29;
+            this.btnVendas.Text = "Vendas";
+            this.btnVendas.UseVisualStyleBackColor = true;
+            this.btnVendas.Click += new System.EventHandler(this.btnVendas_Click);
+            // 
             // DropdownProdutos
             // 
-            this.DropdownProdutos.Controls.Add(this.panel5);
-            this.DropdownProdutos.Controls.Add(this.button3);
-            this.DropdownProdutos.Controls.Add(this.button10);
+            this.DropdownProdutos.Controls.Add(this.btnGerenciarProduto);
             this.DropdownProdutos.Controls.Add(this.panel16);
             this.DropdownProdutos.Controls.Add(this.panel17);
-            this.DropdownProdutos.Controls.Add(this.button11);
-            this.DropdownProdutos.Controls.Add(this.button12);
-            this.DropdownProdutos.Controls.Add(this.panel18);
+            this.DropdownProdutos.Controls.Add(this.btnGerenciarCategoria);
             this.DropdownProdutos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DropdownProdutos.Location = new System.Drawing.Point(0, 857);
+            this.DropdownProdutos.Location = new System.Drawing.Point(0, 488);
             this.DropdownProdutos.Name = "DropdownProdutos";
-            this.DropdownProdutos.Size = new System.Drawing.Size(294, 258);
+            this.DropdownProdutos.Size = new System.Drawing.Size(294, 135);
             this.DropdownProdutos.TabIndex = 28;
             // 
-            // panel5
+            // btnGerenciarProduto
             // 
-            this.panel5.BackColor = System.Drawing.Color.Blue;
-            this.panel5.Location = new System.Drawing.Point(13, 192);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(12, 57);
-            this.panel5.TabIndex = 35;
-            // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(25, 192);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(178, 57);
-            this.button3.TabIndex = 34;
-            this.button3.Text = "Remover Categoria de Produto";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(25, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(178, 57);
-            this.button10.TabIndex = 28;
-            this.button10.Text = "Adicionar Produto";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnGerenciarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGerenciarProduto.FlatAppearance.BorderSize = 0;
+            this.btnGerenciarProduto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnGerenciarProduto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnGerenciarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGerenciarProduto.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGerenciarProduto.ForeColor = System.Drawing.Color.White;
+            this.btnGerenciarProduto.Location = new System.Drawing.Point(25, 3);
+            this.btnGerenciarProduto.Name = "btnGerenciarProduto";
+            this.btnGerenciarProduto.Size = new System.Drawing.Size(178, 57);
+            this.btnGerenciarProduto.TabIndex = 28;
+            this.btnGerenciarProduto.Text = "Gerenciar Produto";
+            this.btnGerenciarProduto.UseVisualStyleBackColor = true;
+            this.btnGerenciarProduto.Click += new System.EventHandler(this.btnGerenciarProduto_Click);
             // 
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.Blue;
-            this.panel16.Location = new System.Drawing.Point(13, 129);
+            this.panel16.Location = new System.Drawing.Point(13, 66);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(12, 57);
             this.panel16.TabIndex = 33;
@@ -183,45 +428,22 @@
             this.panel17.Size = new System.Drawing.Size(12, 57);
             this.panel17.TabIndex = 29;
             // 
-            // button11
+            // btnGerenciarCategoria
             // 
-            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(25, 129);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(178, 57);
-            this.button11.TabIndex = 32;
-            this.button11.Text = "Adicionar Categoria de Produto";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(25, 66);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(178, 57);
-            this.button12.TabIndex = 30;
-            this.button12.Text = "Remover Produto";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.Color.Blue;
-            this.panel18.Location = new System.Drawing.Point(13, 66);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(12, 57);
-            this.panel18.TabIndex = 31;
+            this.btnGerenciarCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGerenciarCategoria.FlatAppearance.BorderSize = 0;
+            this.btnGerenciarCategoria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnGerenciarCategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnGerenciarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGerenciarCategoria.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGerenciarCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnGerenciarCategoria.Location = new System.Drawing.Point(25, 66);
+            this.btnGerenciarCategoria.Name = "btnGerenciarCategoria";
+            this.btnGerenciarCategoria.Size = new System.Drawing.Size(178, 57);
+            this.btnGerenciarCategoria.TabIndex = 32;
+            this.btnGerenciarCategoria.Text = "Gerenciar Categorias de Produto";
+            this.btnGerenciarCategoria.UseVisualStyleBackColor = true;
+            this.btnGerenciarCategoria.Click += new System.EventHandler(this.btnGerenciarCategoria_Click);
             // 
             // btnProdutos
             // 
@@ -232,7 +454,7 @@
             this.btnProdutos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProdutos.ForeColor = System.Drawing.Color.White;
-            this.btnProdutos.Location = new System.Drawing.Point(0, 800);
+            this.btnProdutos.Location = new System.Drawing.Point(0, 431);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(294, 57);
             this.btnProdutos.TabIndex = 24;
@@ -243,15 +465,11 @@
             // DropdownFornecedores
             // 
             this.DropdownFornecedores.Controls.Add(this.btnFornecedorRegistrar);
-            this.DropdownFornecedores.Controls.Add(this.panel12);
             this.DropdownFornecedores.Controls.Add(this.panel13);
-            this.DropdownFornecedores.Controls.Add(this.button8);
-            this.DropdownFornecedores.Controls.Add(this.button9);
-            this.DropdownFornecedores.Controls.Add(this.panel14);
             this.DropdownFornecedores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DropdownFornecedores.Location = new System.Drawing.Point(0, 609);
+            this.DropdownFornecedores.Location = new System.Drawing.Point(0, 364);
             this.DropdownFornecedores.Name = "DropdownFornecedores";
-            this.DropdownFornecedores.Size = new System.Drawing.Size(294, 191);
+            this.DropdownFornecedores.Size = new System.Drawing.Size(294, 67);
             this.DropdownFornecedores.TabIndex = 27;
             // 
             // btnFornecedorRegistrar
@@ -267,17 +485,9 @@
             this.btnFornecedorRegistrar.Name = "btnFornecedorRegistrar";
             this.btnFornecedorRegistrar.Size = new System.Drawing.Size(178, 57);
             this.btnFornecedorRegistrar.TabIndex = 22;
-            this.btnFornecedorRegistrar.Text = "Registrar Fornecedor";
+            this.btnFornecedorRegistrar.Text = "Gerenciar Fornecedores";
             this.btnFornecedorRegistrar.UseVisualStyleBackColor = true;
             this.btnFornecedorRegistrar.Click += new System.EventHandler(this.btnFornecedorRegistrar_Click);
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.Blue;
-            this.panel12.Location = new System.Drawing.Point(13, 129);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(12, 57);
-            this.panel12.TabIndex = 27;
             // 
             // panel13
             // 
@@ -286,46 +496,6 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(12, 57);
             this.panel13.TabIndex = 23;
-            // 
-            // button8
-            // 
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(25, 129);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(178, 57);
-            this.button8.TabIndex = 26;
-            this.button8.Text = "Listar Fornecedores";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(25, 66);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(178, 57);
-            this.button9.TabIndex = 24;
-            this.button9.Text = "Remover Fornecedor";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.Blue;
-            this.panel14.Location = new System.Drawing.Point(13, 66);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(12, 57);
-            this.panel14.TabIndex = 25;
             // 
             // btnFornecedores
             // 
@@ -336,7 +506,7 @@
             this.btnFornecedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFornecedores.ForeColor = System.Drawing.Color.White;
-            this.btnFornecedores.Location = new System.Drawing.Point(0, 555);
+            this.btnFornecedores.Location = new System.Drawing.Point(0, 310);
             this.btnFornecedores.Name = "btnFornecedores";
             this.btnFornecedores.Size = new System.Drawing.Size(294, 54);
             this.btnFornecedores.TabIndex = 23;
@@ -347,15 +517,11 @@
             // DropdownFuncionarios
             // 
             this.DropdownFuncionarios.Controls.Add(this.btnFuncionarioRegistrar);
-            this.DropdownFuncionarios.Controls.Add(this.panel6);
             this.DropdownFuncionarios.Controls.Add(this.panel7);
-            this.DropdownFuncionarios.Controls.Add(this.button2);
-            this.DropdownFuncionarios.Controls.Add(this.button6);
-            this.DropdownFuncionarios.Controls.Add(this.panel9);
             this.DropdownFuncionarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DropdownFuncionarios.Location = new System.Drawing.Point(0, 361);
+            this.DropdownFuncionarios.Location = new System.Drawing.Point(0, 241);
             this.DropdownFuncionarios.Name = "DropdownFuncionarios";
-            this.DropdownFuncionarios.Size = new System.Drawing.Size(294, 194);
+            this.DropdownFuncionarios.Size = new System.Drawing.Size(294, 69);
             this.DropdownFuncionarios.TabIndex = 26;
             // 
             // btnFuncionarioRegistrar
@@ -371,17 +537,9 @@
             this.btnFuncionarioRegistrar.Name = "btnFuncionarioRegistrar";
             this.btnFuncionarioRegistrar.Size = new System.Drawing.Size(178, 57);
             this.btnFuncionarioRegistrar.TabIndex = 16;
-            this.btnFuncionarioRegistrar.Text = "Registrar Funcionário";
+            this.btnFuncionarioRegistrar.Text = "Gerenciar Funcionário";
             this.btnFuncionarioRegistrar.UseVisualStyleBackColor = true;
             this.btnFuncionarioRegistrar.Click += new System.EventHandler(this.btnFuncionarioRegistrar_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Blue;
-            this.panel6.Location = new System.Drawing.Point(13, 129);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(12, 57);
-            this.panel6.TabIndex = 21;
             // 
             // panel7
             // 
@@ -390,46 +548,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(12, 57);
             this.panel7.TabIndex = 17;
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(25, 129);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(178, 57);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Listar Funcionários";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(25, 66);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(178, 57);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "Remover Funcionário";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Blue;
-            this.panel9.Location = new System.Drawing.Point(13, 66);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(12, 57);
-            this.panel9.TabIndex = 19;
             // 
             // btnFuncionarios
             // 
@@ -440,7 +558,7 @@
             this.btnFuncionarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnFuncionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuncionarios.ForeColor = System.Drawing.Color.White;
-            this.btnFuncionarios.Location = new System.Drawing.Point(0, 304);
+            this.btnFuncionarios.Location = new System.Drawing.Point(0, 184);
             this.btnFuncionarios.Name = "btnFuncionarios";
             this.btnFuncionarios.Size = new System.Drawing.Size(294, 57);
             this.btnFuncionarios.TabIndex = 22;
@@ -451,15 +569,11 @@
             // DropdownCliente
             // 
             this.DropdownCliente.Controls.Add(this.btnClienteGerenciar);
-            this.DropdownCliente.Controls.Add(this.panel11);
             this.DropdownCliente.Controls.Add(this.panel10);
-            this.DropdownCliente.Controls.Add(this.btnClienteListar);
-            this.DropdownCliente.Controls.Add(this.btnClienteRemove);
-            this.DropdownCliente.Controls.Add(this.panel19);
             this.DropdownCliente.Dock = System.Windows.Forms.DockStyle.Top;
             this.DropdownCliente.Location = new System.Drawing.Point(0, 114);
             this.DropdownCliente.Name = "DropdownCliente";
-            this.DropdownCliente.Size = new System.Drawing.Size(294, 190);
+            this.DropdownCliente.Size = new System.Drawing.Size(294, 70);
             this.DropdownCliente.TabIndex = 25;
             // 
             // btnClienteGerenciar
@@ -479,14 +593,6 @@
             this.btnClienteGerenciar.UseVisualStyleBackColor = true;
             this.btnClienteGerenciar.Click += new System.EventHandler(this.btnClienteRegistrar_Click);
             // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.Blue;
-            this.panel11.Location = new System.Drawing.Point(13, 128);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(12, 57);
-            this.panel11.TabIndex = 15;
-            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.Blue;
@@ -494,48 +600,6 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(12, 57);
             this.panel10.TabIndex = 11;
-            // 
-            // btnClienteListar
-            // 
-            this.btnClienteListar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClienteListar.FlatAppearance.BorderSize = 0;
-            this.btnClienteListar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.btnClienteListar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.btnClienteListar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClienteListar.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnClienteListar.ForeColor = System.Drawing.Color.White;
-            this.btnClienteListar.Location = new System.Drawing.Point(25, 128);
-            this.btnClienteListar.Name = "btnClienteListar";
-            this.btnClienteListar.Size = new System.Drawing.Size(178, 57);
-            this.btnClienteListar.TabIndex = 14;
-            this.btnClienteListar.Text = "Listar Clientes";
-            this.btnClienteListar.UseVisualStyleBackColor = true;
-            this.btnClienteListar.Click += new System.EventHandler(this.btnClienteListar_Click);
-            // 
-            // btnClienteRemove
-            // 
-            this.btnClienteRemove.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClienteRemove.FlatAppearance.BorderSize = 0;
-            this.btnClienteRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.btnClienteRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.btnClienteRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClienteRemove.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnClienteRemove.ForeColor = System.Drawing.Color.White;
-            this.btnClienteRemove.Location = new System.Drawing.Point(25, 65);
-            this.btnClienteRemove.Name = "btnClienteRemove";
-            this.btnClienteRemove.Size = new System.Drawing.Size(178, 57);
-            this.btnClienteRemove.TabIndex = 12;
-            this.btnClienteRemove.Text = "Remover Cliente";
-            this.btnClienteRemove.UseVisualStyleBackColor = true;
-            this.btnClienteRemove.Click += new System.EventHandler(this.btnClienteRemove_Click);
-            // 
-            // panel19
-            // 
-            this.panel19.BackColor = System.Drawing.Color.Blue;
-            this.panel19.Location = new System.Drawing.Point(13, 65);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(12, 57);
-            this.panel19.TabIndex = 13;
             // 
             // btnClientes
             // 
@@ -628,10 +692,13 @@
             this.Controls.Add(this.Menu);
             this.Name = "FrmMenuPrincipal";
             this.Text = "Menu Principal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
             this.SizeChanged += new System.EventHandler(this.FrmMenuPrincipal_SizeChanged);
             this.Menu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.DropdownCompras.ResumeLayout(false);
+            this.DropdownVendas.ResumeLayout(false);
             this.DropdownProdutos.ResumeLayout(false);
             this.DropdownFornecedores.ResumeLayout(false);
             this.DropdownFuncionarios.ResumeLayout(false);
@@ -651,41 +718,45 @@
         private Panel panelUser;
         private Panel panel4;
         private Panel DropdownProdutos;
-        private Button button10;
+        private Button btnGerenciarProduto;
         private Panel panel16;
         private Panel panel17;
-        private Button button11;
-        private Button button12;
-        private Panel panel18;
+        private Button btnGerenciarCategoria;
         private Button btnProdutos;
         private Panel DropdownFornecedores;
         private Button btnFornecedorRegistrar;
-        private Panel panel12;
         private Panel panel13;
-        private Button button8;
-        private Button button9;
-        private Panel panel14;
         private Button btnFornecedores;
         private Panel DropdownFuncionarios;
         private Button btnFuncionarioRegistrar;
-        private Panel panel6;
         private Panel panel7;
-        private Button button2;
-        private Button button6;
-        private Panel panel9;
         private Button btnFuncionarios;
         private Panel DropdownCliente;
         private Button btnClienteGerenciar;
-        private Panel panel11;
         private Panel panel10;
-        private Button btnClienteListar;
-        private Button btnClienteRemove;
-        private Panel panel19;
         private Button btnClientes;
         private Button btnHome;
         private Panel panel1;
-        private Panel panel5;
-        private Button button3;
         private Label label1;
+        private Button btnVendas;
+        private Panel DropdownVendas;
+        private Panel panel8;
+        private Button btnBuscarVendaCliente;
+        private Button btnGerenciarVendas;
+        private Panel panel15;
+        private Panel panel20;
+        private Button btnGerenciarVendasParceladas;
+        private Button btnRegistroVendas;
+        private Panel panel21;
+        private Panel DropdownCompras;
+        private Panel panel22;
+        private Button button1;
+        private Button btnGerenciarCompras;
+        private Panel panel23;
+        private Panel panel24;
+        private Button button5;
+        private Button button7;
+        private Panel panel25;
+        private Button btnCompras;
     }
 }

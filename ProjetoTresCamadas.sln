@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetosTresCamadas.Data", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoTresCamadas.Bussines", "Bussines\ProjetoTresCamadas.Bussines\ProjetoTresCamadas.Bussines.csproj", "{F31B599F-3E1E-45A4-817C-B9528310D0BE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DTO", "DTO", "{71306404-BBBD-43BB-AE1F-4391365A703C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO", "DTO\Entidades\DTO.csproj", "{851BCEF7-B837-4D5D-8358-2CC64E5CD7D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,10 @@ Global
 		{F31B599F-3E1E-45A4-817C-B9528310D0BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F31B599F-3E1E-45A4-817C-B9528310D0BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F31B599F-3E1E-45A4-817C-B9528310D0BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{851BCEF7-B837-4D5D-8358-2CC64E5CD7D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851BCEF7-B837-4D5D-8358-2CC64E5CD7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851BCEF7-B837-4D5D-8358-2CC64E5CD7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851BCEF7-B837-4D5D-8358-2CC64E5CD7D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +52,7 @@ Global
 		{F7270906-3E8E-4C4E-A800-0897A4FB313A} = {0A6B0B20-E4E7-4DBD-AADD-BF930A1D3073}
 		{DD0249F8-E144-4E22-A4D4-44EF54FB245D} = {4C50EB01-8414-4E0F-AE3A-50E90DC7A069}
 		{F31B599F-3E1E-45A4-817C-B9528310D0BE} = {A02F85A6-6E8B-4233-B161-837E02DBCEE0}
+		{851BCEF7-B837-4D5D-8358-2CC64E5CD7D5} = {71306404-BBBD-43BB-AE1F-4391365A703C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E2259A0-17CB-4BF5-9B5D-C0C8B4BD58F3}
