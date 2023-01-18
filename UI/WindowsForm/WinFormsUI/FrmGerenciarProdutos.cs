@@ -76,7 +76,7 @@ namespace WinFormsUI
             produto.Nome = textNomeProduto.Text;
             produto.Preco = Convert.ToDecimal(textValorProduto.Text);
             produto.Descricao = textDescricaoProduto.Text;
-            produto.Estoque += Convert.ToInt32(textEstoqueProduto.Text);
+            produto.Estoque = Convert.ToInt32(textEstoqueProduto.Text);
             produto.CategoriaId = categorias.FirstOrDefault(x => x.TipoCategoria == comboBoxCategoriaProdutos.Text).Id;
             var retorno = gestaoProdutos.SalvarProduto(produto);
             MessageBox.Show(retorno);

@@ -29,10 +29,18 @@
         private void InitializeComponent()
         {
             this.panelGerenciarCompras = new System.Windows.Forms.Panel();
-            this.dataGridViewVendas = new System.Windows.Forms.DataGridView();
+            this.labelValorTotal = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnLimparCompras = new System.Windows.Forms.Button();
+            this.textBoxParcelas = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxPagamento = new System.Windows.Forms.ComboBox();
+            this.btnFinalizarCompra = new System.Windows.Forms.Button();
+            this.dataGridViewCompras = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAdicionarVenda = new System.Windows.Forms.Button();
-            this.btnRemoverVenda = new System.Windows.Forms.Button();
+            this.btnAdicionarCompra = new System.Windows.Forms.Button();
+            this.btnRemoverCompra = new System.Windows.Forms.Button();
             this.textBoxQuantidade = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxProduto = new System.Windows.Forms.ComboBox();
@@ -44,13 +52,21 @@
             this.comboBoxFuncionario = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelGerenciarCompras.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVendas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompras)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelGerenciarCompras
             // 
-            this.panelGerenciarCompras.Controls.Add(this.dataGridViewVendas);
+            this.panelGerenciarCompras.Controls.Add(this.labelValorTotal);
+            this.panelGerenciarCompras.Controls.Add(this.label8);
+            this.panelGerenciarCompras.Controls.Add(this.btnLimparCompras);
+            this.panelGerenciarCompras.Controls.Add(this.textBoxParcelas);
+            this.panelGerenciarCompras.Controls.Add(this.label7);
+            this.panelGerenciarCompras.Controls.Add(this.label6);
+            this.panelGerenciarCompras.Controls.Add(this.comboBoxPagamento);
+            this.panelGerenciarCompras.Controls.Add(this.btnFinalizarCompra);
+            this.panelGerenciarCompras.Controls.Add(this.dataGridViewCompras);
             this.panelGerenciarCompras.Controls.Add(this.groupBox1);
             this.panelGerenciarCompras.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGerenciarCompras.Location = new System.Drawing.Point(0, 0);
@@ -58,22 +74,118 @@
             this.panelGerenciarCompras.Size = new System.Drawing.Size(1010, 745);
             this.panelGerenciarCompras.TabIndex = 0;
             // 
-            // dataGridViewVendas
+            // labelValorTotal
             // 
-            this.dataGridViewVendas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridViewVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewVendas.Location = new System.Drawing.Point(37, 288);
-            this.dataGridViewVendas.Name = "dataGridViewVendas";
-            this.dataGridViewVendas.RowHeadersWidth = 51;
-            this.dataGridViewVendas.RowTemplate.Height = 29;
-            this.dataGridViewVendas.Size = new System.Drawing.Size(937, 407);
-            this.dataGridViewVendas.TabIndex = 3;
+            this.labelValorTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelValorTotal.AutoSize = true;
+            this.labelValorTotal.ForeColor = System.Drawing.Color.Red;
+            this.labelValorTotal.Location = new System.Drawing.Point(263, 683);
+            this.labelValorTotal.Name = "labelValorTotal";
+            this.labelValorTotal.Size = new System.Drawing.Size(17, 20);
+            this.labelValorTotal.TabIndex = 34;
+            this.labelValorTotal.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(105, 683);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(157, 20);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Valor total da compra:";
+            // 
+            // btnLimparCompras
+            // 
+            this.btnLimparCompras.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLimparCompras.BackColor = System.Drawing.Color.Red;
+            this.btnLimparCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparCompras.ForeColor = System.Drawing.Color.White;
+            this.btnLimparCompras.Location = new System.Drawing.Point(752, 682);
+            this.btnLimparCompras.Name = "btnLimparCompras";
+            this.btnLimparCompras.Size = new System.Drawing.Size(105, 42);
+            this.btnLimparCompras.TabIndex = 32;
+            this.btnLimparCompras.Text = "Limpar";
+            this.btnLimparCompras.UseVisualStyleBackColor = false;
+            this.btnLimparCompras.Click += new System.EventHandler(this.btnLimparCompras_Click);
+            // 
+            // textBoxParcelas
+            // 
+            this.textBoxParcelas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxParcelas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxParcelas.Location = new System.Drawing.Point(568, 701);
+            this.textBoxParcelas.Name = "textBoxParcelas";
+            this.textBoxParcelas.ReadOnly = true;
+            this.textBoxParcelas.Size = new System.Drawing.Size(150, 20);
+            this.textBoxParcelas.TabIndex = 31;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(567, 675);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 20);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Parcelas";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(395, 675);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(151, 20);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Forma de Pagamento";
+            // 
+            // comboBoxPagamento
+            // 
+            this.comboBoxPagamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxPagamento.FormattingEnabled = true;
+            this.comboBoxPagamento.Items.AddRange(new object[] {
+            "A vista",
+            "Cartão de Credito",
+            "Cartão de Debito",
+            "Compra Parcelada",
+            "Boleto"});
+            this.comboBoxPagamento.Location = new System.Drawing.Point(395, 701);
+            this.comboBoxPagamento.Name = "comboBoxPagamento";
+            this.comboBoxPagamento.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxPagamento.TabIndex = 29;
+            // 
+            // btnFinalizarCompra
+            // 
+            this.btnFinalizarCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnFinalizarCompra.BackColor = System.Drawing.Color.Navy;
+            this.btnFinalizarCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizarCompra.ForeColor = System.Drawing.Color.White;
+            this.btnFinalizarCompra.Location = new System.Drawing.Point(867, 677);
+            this.btnFinalizarCompra.Name = "btnFinalizarCompra";
+            this.btnFinalizarCompra.Size = new System.Drawing.Size(105, 56);
+            this.btnFinalizarCompra.TabIndex = 23;
+            this.btnFinalizarCompra.Text = "Finalizar Compra";
+            this.btnFinalizarCompra.UseVisualStyleBackColor = false;
+            this.btnFinalizarCompra.Click += new System.EventHandler(this.btnFinalizarCompra_Click);
+            // 
+            // dataGridViewCompras
+            // 
+            this.dataGridViewCompras.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridViewCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCompras.Location = new System.Drawing.Point(35, 264);
+            this.dataGridViewCompras.Name = "dataGridViewCompras";
+            this.dataGridViewCompras.RowHeadersWidth = 51;
+            this.dataGridViewCompras.RowTemplate.Height = 29;
+            this.dataGridViewCompras.Size = new System.Drawing.Size(937, 407);
+            this.dataGridViewCompras.TabIndex = 3;
+            this.dataGridViewCompras.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewCompras_CellMouseClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.btnAdicionarVenda);
-            this.groupBox1.Controls.Add(this.btnRemoverVenda);
+            this.groupBox1.Controls.Add(this.btnAdicionarCompra);
+            this.groupBox1.Controls.Add(this.btnRemoverCompra);
             this.groupBox1.Controls.Add(this.textBoxQuantidade);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.comboBoxProduto);
@@ -86,34 +198,36 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(69, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(865, 196);
+            this.groupBox1.Size = new System.Drawing.Size(865, 176);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Realizar Compras";
             // 
-            // btnAdicionarVenda
+            // btnAdicionarCompra
             // 
-            this.btnAdicionarVenda.BackColor = System.Drawing.Color.Navy;
-            this.btnAdicionarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarVenda.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionarVenda.Location = new System.Drawing.Point(541, 131);
-            this.btnAdicionarVenda.Name = "btnAdicionarVenda";
-            this.btnAdicionarVenda.Size = new System.Drawing.Size(105, 42);
-            this.btnAdicionarVenda.TabIndex = 22;
-            this.btnAdicionarVenda.Text = "Adicionar";
-            this.btnAdicionarVenda.UseVisualStyleBackColor = false;
+            this.btnAdicionarCompra.BackColor = System.Drawing.Color.Navy;
+            this.btnAdicionarCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarCompra.ForeColor = System.Drawing.Color.White;
+            this.btnAdicionarCompra.Location = new System.Drawing.Point(541, 110);
+            this.btnAdicionarCompra.Name = "btnAdicionarCompra";
+            this.btnAdicionarCompra.Size = new System.Drawing.Size(105, 42);
+            this.btnAdicionarCompra.TabIndex = 22;
+            this.btnAdicionarCompra.Text = "Adicionar";
+            this.btnAdicionarCompra.UseVisualStyleBackColor = false;
+            this.btnAdicionarCompra.Click += new System.EventHandler(this.btnAdicionarCompra_Click);
             // 
-            // btnRemoverVenda
+            // btnRemoverCompra
             // 
-            this.btnRemoverVenda.BackColor = System.Drawing.Color.Red;
-            this.btnRemoverVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoverVenda.ForeColor = System.Drawing.Color.White;
-            this.btnRemoverVenda.Location = new System.Drawing.Point(749, 131);
-            this.btnRemoverVenda.Name = "btnRemoverVenda";
-            this.btnRemoverVenda.Size = new System.Drawing.Size(105, 42);
-            this.btnRemoverVenda.TabIndex = 20;
-            this.btnRemoverVenda.Text = "Remover";
-            this.btnRemoverVenda.UseVisualStyleBackColor = false;
+            this.btnRemoverCompra.BackColor = System.Drawing.Color.Red;
+            this.btnRemoverCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoverCompra.ForeColor = System.Drawing.Color.White;
+            this.btnRemoverCompra.Location = new System.Drawing.Point(749, 110);
+            this.btnRemoverCompra.Name = "btnRemoverCompra";
+            this.btnRemoverCompra.Size = new System.Drawing.Size(105, 42);
+            this.btnRemoverCompra.TabIndex = 20;
+            this.btnRemoverCompra.Text = "Remover";
+            this.btnRemoverCompra.UseVisualStyleBackColor = false;
+            this.btnRemoverCompra.Click += new System.EventHandler(this.btnRemoverCompra_Click);
             // 
             // textBoxQuantidade
             // 
@@ -223,7 +337,8 @@
             this.Text = "FrmGerenciarCompras";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelGerenciarCompras.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVendas)).EndInit();
+            this.panelGerenciarCompras.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompras)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -233,10 +348,10 @@
         #endregion
 
         private Panel panelGerenciarCompras;
-        private DataGridView dataGridViewVendas;
+        private DataGridView dataGridViewCompras;
         private GroupBox groupBox1;
-        private Button btnAdicionarVenda;
-        private Button btnRemoverVenda;
+        private Button btnAdicionarCompra;
+        private Button btnRemoverCompra;
         private TextBox textBoxQuantidade;
         private Label label5;
         private ComboBox comboBoxProduto;
@@ -247,5 +362,13 @@
         private Label label2;
         private ComboBox comboBoxFuncionario;
         private Label label1;
+        private Button btnFinalizarCompra;
+        private Label labelValorTotal;
+        private Label label8;
+        private Button btnLimparCompras;
+        private TextBox textBoxParcelas;
+        private Label label7;
+        private Label label6;
+        private ComboBox comboBoxPagamento;
     }
 }

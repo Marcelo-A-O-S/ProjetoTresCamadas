@@ -16,6 +16,7 @@ namespace ProjetosTresCamadas.Data.DataContext
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Compra> Compras { get; set; }
         public DbSet<CompraParcelada> ComprasParcelada { get; set; }
+        public DbSet<ProdutoComprado> ProdutosComprados { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=GestaoDeComercio;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");

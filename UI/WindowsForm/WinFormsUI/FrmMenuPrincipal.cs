@@ -183,5 +183,10 @@ namespace WinFormsUI
         {
             OpenDropdown(DropdownCompras);
         }
+
+        private void btnGerenciarCompras_Click(object sender, EventArgs e)
+        {
+            MostrarForm(new FrmGerenciarCompras());
+        }
     }
 }

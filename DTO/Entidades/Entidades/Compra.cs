@@ -14,7 +14,7 @@ namespace DTO.Entidades
         [Key]
         public int Id { get; set; }
         public string TipoDePagamento { get; set; }
-        public List<Produto> Produtos { get; set; }
+        public List<ProdutoComprado> Produtos { get; set; }
         public int QuantidadeComprados { get; set; }
         public DateTime DataDaCompra { get; set; } = DateTime.Now;
         public bool PagamentoRealizado { get; set; } = false;

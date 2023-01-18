@@ -45,12 +45,10 @@ namespace WinFormsUI
             carregarComboBoxCliente();
             carregarDgvVendaHeader();
         }
-
         private void carregarDgvVendaHeader()
         {
             dataGridViewVendas.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridViewVendas.MultiSelect = false;
-            
             dataGridViewVendas.ColumnCount = 9;
             dataGridViewVendas.Columns[0].HeaderText = "Id";
             dataGridViewVendas.Columns[0].DataPropertyName = "Id";
@@ -87,61 +85,76 @@ namespace WinFormsUI
         }
         private void dataGridViewVendas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (dataGridViewVendas.SelectedRows.Count > 0)
+            try
             {
-                DataGridViewRow lines = dataGridViewVendas.SelectedRows[0];
-                comboBoxProduto.Text = lines.Cells["NomeProduto"].Value.ToString();
-                comboBoxCategoria.Text = lines.Cells["CategoriaNome"].Value.ToString();
-                comboBoxCliente.Text = lines.Cells["NomeCliente"].Value.ToString();
-                textBoxQuantidade.Text = lines.Cells["QuantidadeProdutos"].Value.ToString();
-                produtoVendidoAcesso.NomeCliente = lines.Cells["NomeCliente"].Value.ToString();
-                produtoVendidoAcesso.QuantidadeProdutos = Convert.ToInt32(lines.Cells["QuantidadeProdutos"].Value);
-                produtoVendidoAcesso.NomeProduto = lines.Cells["NomeProduto"].Value.ToString();
-                produtoVendidoAcesso.CategoriaNome = lines.Cells["CategoriaNome"].Value.ToString();
-                produtoVendidoAcesso.Id = (int)lines.Cells["Id"].Value;
+                if (dataGridViewVendas.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow lines = dataGridViewVendas.SelectedRows[0];
+                    comboBoxProduto.Text = lines.Cells["NomeProduto"].Value.ToString();
+                    comboBoxCategoria.Text = lines.Cells["CategoriaNome"].Value.ToString();
+                    comboBoxCliente.Text = lines.Cells["NomeCliente"].Value.ToString();
+                    textBoxQuantidade.Text = lines.Cells["QuantidadeProdutos"].Value.ToString();
+                    produtoVendidoAcesso.NomeCliente = lines.Cells["NomeCliente"].Value.ToString();
+                    produtoVendidoAcesso.QuantidadeProdutos = Convert.ToInt32(lines.Cells["QuantidadeProdutos"].Value);
+                    produtoVendidoAcesso.NomeProduto = lines.Cells["NomeProduto"].Value.ToString();
+                    produtoVendidoAcesso.CategoriaNome = lines.Cells["CategoriaNome"].Value.ToString();
+                    produtoVendidoAcesso.Id = (int)lines.Cells["Id"].Value;
+                }
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message);
             }
             
         }
         private void btnRemoverVenda_Click(object sender, EventArgs e)
         {
-            produtoVendidoAcesso = produtos.Find(x => x.Id == produtoVendidoAcesso.Id);
-            venda.ValorTotal = venda.ValorTotal - produtoVendidoAcesso.ValorTotalProduto;
-            produtos.Remove(produtoVendidoAcesso);
-            venda.QuantidadeVendidos = produtos.Count;
-            RecarregarDgvVendas();
+            try
+            {
+                if (dataGridViewVendas.SelectedRows.Count > 0)
+                {
+                    produtoVendidoAcesso = produtos.Find(x => x.Id == produtoVendidoAcesso.Id);
+                    venda.ValorTotal = venda.ValorTotal - produtoVendidoAcesso.ValorTotalProduto;
+                    labelValorTotal.Text = venda.ValorTotal.ToString();
+                    produtos.Remove(produtoVendidoAcesso);
+                    venda.QuantidadeVendidos = produtos.Count;
+                    RecarregarDgvVendas();
+                }
+                else
+                {
+                    MessageBox.Show("Selecione o indice para prosseguir");
+                }
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            } 
         }
-
         private async void carregarComboBoxCliente()
         {
             comboBoxCliente.DataSource = gestaoClientes.ObterClientes().Result.Select(x => x.Nome).ToList();
             comboBoxCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
         }
-
         private async void carregarComboBoxProduto()
         {
             comboBoxProduto.DataSource = gestaoProdutos.ObterProdutos().Result.Select(x=> x.Nome).ToList();
         }
-
         private async void carregarComboBoxFuncionario()
         {
             comboBoxFuncionario.DataSource = gestaoFuncionarios.ObterFuncionarios().Result.Select(x => x.Nome).ToList();
         }
-
         private async void carregarComboBoxCategoria()
         {
             comboBoxCategoria.DataSource = gestaoCategorias.ObterCategorias().Result.Select(x => x.TipoCategoria).ToList();
         }
-
         private void comboBoxCliente_TextUpdate(object sender, EventArgs e)
         {
 
         }
-
         private void comboBoxCliente_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void comboBoxPagamento_TextChanged(object sender, EventArgs e)
         {
             if(comboBoxPagamento.Text == "Venda Parcelada")
@@ -149,7 +162,6 @@ namespace WinFormsUI
                 textBoxParcelas.ReadOnly = false;
             }
         }
-
         private async void btnAdicionarVenda_Click(object sender, EventArgs e)
         {
             if(comboBoxCategoria.Text != string.Empty && comboBoxProduto.Text != string.Empty && comboBoxCliente.Text != string.Empty && comboBoxFuncionario.Text != string.Empty && textBoxQuantidade.Text != string.Empty)
@@ -180,12 +192,10 @@ namespace WinFormsUI
             }
                
         }
-
         private void RecarregarDgvVendas()
         {
             dataGridViewVendas.DataSource = produtos.ToList();
         }
-
         private void btnLimparVendas_Click(object sender, EventArgs e)
         {
             LimparCampoVenda();
@@ -193,10 +203,10 @@ namespace WinFormsUI
         }
         private void LimparCampoVenda()
         {
+            produtos.Clear();
             venda.ValorTotal = venda.ValorTotal - venda.ValorTotal;
             venda.QuantidadeVendidos = produtos.Count;
             labelValorTotal.Text = venda.ValorTotal.ToString();
-            produtos.Clear();
             RecarregarDgvVendas();
         }
         private async void btnFinalizarVenda_Click(object sender, EventArgs e)

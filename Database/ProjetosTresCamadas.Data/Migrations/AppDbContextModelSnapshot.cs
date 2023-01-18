@@ -111,6 +111,55 @@ namespace ProjetosTresCamadas.Data.Migrations
                     b.ToTable("ComprasParcelada");
                 });
 
+            modelBuilder.Entity("DTO.Entidades.ProdutoComprado", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoriaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CategoriaNome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CompraId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FornecedorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NomeFornecedor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NomeProduto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("QuantidadeProdutos")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ValorProduto")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ValorTotalProduto")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoriaId");
+
+                    b.HasIndex("CompraId");
+
+                    b.HasIndex("FornecedorId");
+
+                    b.ToTable("ProdutosComprados");
+                });
+
             modelBuilder.Entity("DTO.Entidades.ProdutoVendido", b =>
                 {
                     b.Property<int>("Id")
@@ -417,9 +466,6 @@ namespace ProjetosTresCamadas.Data.Migrations
                     b.Property<int>("CategoriaId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CompraId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -437,8 +483,6 @@ namespace ProjetosTresCamadas.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CategoriaId");
-
-                    b.HasIndex("CompraId");
 
                     b.ToTable("Produtos");
                 });
@@ -471,6 +515,31 @@ namespace ProjetosTresCamadas.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("compra");
+                });
+
+            modelBuilder.Entity("DTO.Entidades.ProdutoComprado", b =>
+                {
+                    b.HasOne("ProjetoTresCamadas.DTO.Entidades.Categoria", "categoria")
+                        .WithMany()
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DTO.Entidades.Compra", "compra")
+                        .WithMany("Produtos")
+                        .HasForeignKey("CompraId");
+
+                    b.HasOne("ProjetoTresCamadas.DTO.Entidades.Fornecedor", "fornecedor")
+                        .WithMany()
+                        .HasForeignKey("FornecedorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("categoria");
+
+                    b.Navigation("compra");
+
+                    b.Navigation("fornecedor");
                 });
 
             modelBuilder.Entity("DTO.Entidades.ProdutoVendido", b =>
@@ -537,10 +606,6 @@ namespace ProjetosTresCamadas.Data.Migrations
                         .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("DTO.Entidades.Compra", null)
-                        .WithMany("Produtos")
-                        .HasForeignKey("CompraId");
 
                     b.Navigation("categoria");
                 });
