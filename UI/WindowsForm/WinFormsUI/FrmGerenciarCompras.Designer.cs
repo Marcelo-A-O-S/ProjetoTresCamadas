@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelGerenciarCompras = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelValorTotal = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnLimparCompras = new System.Windows.Forms.Button();
@@ -58,6 +60,8 @@
             // 
             // panelGerenciarCompras
             // 
+            this.panelGerenciarCompras.Controls.Add(this.label9);
+            this.panelGerenciarCompras.Controls.Add(this.textBox1);
             this.panelGerenciarCompras.Controls.Add(this.labelValorTotal);
             this.panelGerenciarCompras.Controls.Add(this.label8);
             this.panelGerenciarCompras.Controls.Add(this.btnLimparCompras);
@@ -74,12 +78,31 @@
             this.panelGerenciarCompras.Size = new System.Drawing.Size(1010, 745);
             this.panelGerenciarCompras.TabIndex = 0;
             // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(592, 676);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 20);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "Valor Pago:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(590, 700);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 20);
+            this.textBox1.TabIndex = 35;
+            // 
             // labelValorTotal
             // 
             this.labelValorTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelValorTotal.AutoSize = true;
             this.labelValorTotal.ForeColor = System.Drawing.Color.Red;
-            this.labelValorTotal.Location = new System.Drawing.Point(263, 683);
+            this.labelValorTotal.Location = new System.Drawing.Point(193, 682);
             this.labelValorTotal.Name = "labelValorTotal";
             this.labelValorTotal.Size = new System.Drawing.Size(17, 20);
             this.labelValorTotal.TabIndex = 34;
@@ -89,7 +112,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(105, 683);
+            this.label8.Location = new System.Drawing.Point(35, 682);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(157, 20);
             this.label8.TabIndex = 33;
@@ -113,7 +136,7 @@
             // 
             this.textBoxParcelas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxParcelas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxParcelas.Location = new System.Drawing.Point(568, 701);
+            this.textBoxParcelas.Location = new System.Drawing.Point(418, 700);
             this.textBoxParcelas.Name = "textBoxParcelas";
             this.textBoxParcelas.ReadOnly = true;
             this.textBoxParcelas.Size = new System.Drawing.Size(150, 20);
@@ -123,7 +146,7 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(567, 675);
+            this.label7.Location = new System.Drawing.Point(417, 674);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 20);
             this.label7.TabIndex = 30;
@@ -133,7 +156,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(395, 675);
+            this.label6.Location = new System.Drawing.Point(245, 674);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(151, 20);
             this.label6.TabIndex = 28;
@@ -150,10 +173,11 @@
             "Cartão de Debito",
             "Compra Parcelada",
             "Boleto"});
-            this.comboBoxPagamento.Location = new System.Drawing.Point(395, 701);
+            this.comboBoxPagamento.Location = new System.Drawing.Point(245, 700);
             this.comboBoxPagamento.Name = "comboBoxPagamento";
             this.comboBoxPagamento.Size = new System.Drawing.Size(151, 28);
             this.comboBoxPagamento.TabIndex = 29;
+            this.comboBoxPagamento.TextChanged += new System.EventHandler(this.comboBoxPagamento_TextChanged);
             // 
             // btnFinalizarCompra
             // 
@@ -370,5 +394,7 @@
         private Label label7;
         private Label label6;
         private ComboBox comboBoxPagamento;
+        private Label label9;
+        private TextBox textBox1;
     }
 }

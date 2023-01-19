@@ -127,6 +127,7 @@
             this.dGVInfoParcela.RowTemplate.Height = 29;
             this.dGVInfoParcela.Size = new System.Drawing.Size(935, 140);
             this.dGVInfoParcela.TabIndex = 5;
+            this.dGVInfoParcela.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dGVInfoParcela_CellMouseClick);
             // 
             // dGVRegistrosVendasParceladas
             // 

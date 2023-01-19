@@ -20,6 +20,8 @@ namespace DTO.Entidades
         public DateTime DataDaVenda { get; set; } = DateTime.Now;
         public bool PagamentoRealizado { get; set; } = false;
         [Column(TypeName = "decimal(18,2)")]
+        public decimal ValorPago { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
         public decimal ValorTotal { get; set; }
         [ForeignKey("Cliente")]
         public int ClienteId { get; set; }

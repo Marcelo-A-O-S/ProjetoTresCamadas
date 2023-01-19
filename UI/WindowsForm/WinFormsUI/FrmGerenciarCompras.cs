@@ -170,15 +170,22 @@ namespace WinFormsUI
                 if (dataGridViewCompras.SelectedRows.Count > 0)
                 {
                     DataGridViewRow lines = dataGridViewCompras.SelectedRows[0];
-                    comboBoxProduto.Text = lines.Cells["NomeProduto"].Value.ToString();
-                    comboBoxCategoria.Text = lines.Cells["CategoriaNome"].Value.ToString();
-                    comboBoxFornecedor.Text = lines.Cells["NomeFornecedor"].Value.ToString();
-                    textBoxQuantidade.Text = lines.Cells["QuantidadeProdutos"].Value.ToString();
-                    produtoCompradoAcesso.NomeFornecedor = lines.Cells["NomeFornecedor"].Value.ToString();
-                    produtoCompradoAcesso.QuantidadeProdutos = Convert.ToInt32(lines.Cells["QuantidadeProdutos"].Value);
-                    produtoCompradoAcesso.NomeProduto = lines.Cells["NomeProduto"].Value.ToString();
-                    produtoCompradoAcesso.CategoriaNome = lines.Cells["CategoriaNome"].Value.ToString();
-                    produtoCompradoAcesso.Id = (int)lines.Cells["Id"].Value;
+                    if(lines.Cells["Id"].Value != null)
+                    {
+                        comboBoxProduto.Text = lines.Cells["NomeProduto"].Value.ToString();
+                        comboBoxCategoria.Text = lines.Cells["CategoriaNome"].Value.ToString();
+                        comboBoxFornecedor.Text = lines.Cells["NomeFornecedor"].Value.ToString();
+                        textBoxQuantidade.Text = lines.Cells["QuantidadeProdutos"].Value.ToString();
+                        produtoCompradoAcesso.NomeFornecedor = lines.Cells["NomeFornecedor"].Value.ToString();
+                        produtoCompradoAcesso.QuantidadeProdutos = Convert.ToInt32(lines.Cells["QuantidadeProdutos"].Value);
+                        produtoCompradoAcesso.NomeProduto = lines.Cells["NomeProduto"].Value.ToString();
+                        produtoCompradoAcesso.CategoriaNome = lines.Cells["CategoriaNome"].Value.ToString();
+                        produtoCompradoAcesso.Id = (int)lines.Cells["Id"].Value;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Adicione um produto para que possa prosseguir com a acão!");
+                    }
                 }
                 if(dataGridViewCompras.SelectedCells.Count == 1)
                 {
@@ -244,7 +251,6 @@ namespace WinFormsUI
                             _produto.Estoque += produto.QuantidadeProdutos;
                             gestaoProdutos.SalvarProduto(_produto);
                         }
-
                         if (compra.TipoDePagamento == "Compra Parcelada")
                         {
                             var compraParcelada = new CompraParcelada();
@@ -291,6 +297,17 @@ namespace WinFormsUI
             }catch(Exception erro)
             {
                 MessageBox.Show(erro.Message);
+            }
+        }
+        private void comboBoxPagamento_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBoxPagamento.Text == "Compra Parcelada")
+            {
+                textBoxParcelas.ReadOnly = false;
+            }
+            if (comboBoxPagamento.Text != "Compra Parcelada")
+            {
+                textBoxParcelas.ReadOnly = true;
             }
         }
     }

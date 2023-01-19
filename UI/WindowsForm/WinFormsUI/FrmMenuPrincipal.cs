@@ -188,5 +188,20 @@ namespace WinFormsUI
         {
             MostrarForm(new FrmGerenciarCompras());
         }
+
+        private void btnRegistroCompra_Click(object sender, EventArgs e)
+        {
+            MostrarForm(new FrmRegistroCompras());
+        }
+
+        private void btnGerenciarCompraParcelada_Click(object sender, EventArgs e)
+        {
+            MostrarForm(new FrmGerenciarComprasParceladas());
+        }
+
+        private void btnBuscarCompraFornecedor_Click(object sender, EventArgs e)
+        {
+            MostrarForm(new FrmBuscarCompraFornecedor());
+        }
     }
 }

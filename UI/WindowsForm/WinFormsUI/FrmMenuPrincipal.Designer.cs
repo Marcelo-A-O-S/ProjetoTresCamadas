@@ -32,12 +32,12 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.DropdownCompras = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscarCompraFornecedor = new System.Windows.Forms.Button();
             this.btnGerenciarCompras = new System.Windows.Forms.Button();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnGerenciarCompraParcelada = new System.Windows.Forms.Button();
+            this.btnRegistroCompra = new System.Windows.Forms.Button();
             this.panel25 = new System.Windows.Forms.Panel();
             this.btnCompras = new System.Windows.Forms.Button();
             this.DropdownVendas = new System.Windows.Forms.Panel();
@@ -124,12 +124,12 @@
             // DropdownCompras
             // 
             this.DropdownCompras.Controls.Add(this.panel22);
-            this.DropdownCompras.Controls.Add(this.button1);
+            this.DropdownCompras.Controls.Add(this.btnBuscarCompraFornecedor);
             this.DropdownCompras.Controls.Add(this.btnGerenciarCompras);
             this.DropdownCompras.Controls.Add(this.panel23);
             this.DropdownCompras.Controls.Add(this.panel24);
-            this.DropdownCompras.Controls.Add(this.button5);
-            this.DropdownCompras.Controls.Add(this.button7);
+            this.DropdownCompras.Controls.Add(this.btnGerenciarCompraParcelada);
+            this.DropdownCompras.Controls.Add(this.btnRegistroCompra);
             this.DropdownCompras.Controls.Add(this.panel25);
             this.DropdownCompras.Dock = System.Windows.Forms.DockStyle.Top;
             this.DropdownCompras.Location = new System.Drawing.Point(0, 995);
@@ -145,21 +145,22 @@
             this.panel22.Size = new System.Drawing.Size(12, 57);
             this.panel22.TabIndex = 35;
             // 
-            // button1
+            // btnBuscarCompraFornecedor
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(25, 192);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 57);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Buscar Compras por Fornecedor";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscarCompraFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarCompraFornecedor.FlatAppearance.BorderSize = 0;
+            this.btnBuscarCompraFornecedor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnBuscarCompraFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnBuscarCompraFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCompraFornecedor.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscarCompraFornecedor.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarCompraFornecedor.Location = new System.Drawing.Point(25, 192);
+            this.btnBuscarCompraFornecedor.Name = "btnBuscarCompraFornecedor";
+            this.btnBuscarCompraFornecedor.Size = new System.Drawing.Size(178, 57);
+            this.btnBuscarCompraFornecedor.TabIndex = 34;
+            this.btnBuscarCompraFornecedor.Text = "Buscar Compras por Fornecedor";
+            this.btnBuscarCompraFornecedor.UseVisualStyleBackColor = true;
+            this.btnBuscarCompraFornecedor.Click += new System.EventHandler(this.btnBuscarCompraFornecedor_Click);
             // 
             // btnGerenciarCompras
             // 
@@ -194,37 +195,39 @@
             this.panel24.Size = new System.Drawing.Size(12, 57);
             this.panel24.TabIndex = 29;
             // 
-            // button5
+            // btnGerenciarCompraParcelada
             // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(25, 129);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(178, 57);
-            this.button5.TabIndex = 32;
-            this.button5.Text = "Gerenciar Compras Parceladas";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnGerenciarCompraParcelada.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGerenciarCompraParcelada.FlatAppearance.BorderSize = 0;
+            this.btnGerenciarCompraParcelada.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnGerenciarCompraParcelada.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnGerenciarCompraParcelada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGerenciarCompraParcelada.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGerenciarCompraParcelada.ForeColor = System.Drawing.Color.White;
+            this.btnGerenciarCompraParcelada.Location = new System.Drawing.Point(25, 129);
+            this.btnGerenciarCompraParcelada.Name = "btnGerenciarCompraParcelada";
+            this.btnGerenciarCompraParcelada.Size = new System.Drawing.Size(178, 57);
+            this.btnGerenciarCompraParcelada.TabIndex = 32;
+            this.btnGerenciarCompraParcelada.Text = "Gerenciar Compras Parceladas";
+            this.btnGerenciarCompraParcelada.UseVisualStyleBackColor = true;
+            this.btnGerenciarCompraParcelada.Click += new System.EventHandler(this.btnGerenciarCompraParcelada_Click);
             // 
-            // button7
+            // btnRegistroCompra
             // 
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(25, 66);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(178, 57);
-            this.button7.TabIndex = 30;
-            this.button7.Text = "Registro de Compras";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnRegistroCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistroCompra.FlatAppearance.BorderSize = 0;
+            this.btnRegistroCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnRegistroCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnRegistroCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistroCompra.Font = new System.Drawing.Font("Segoe UI Symbol", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRegistroCompra.ForeColor = System.Drawing.Color.White;
+            this.btnRegistroCompra.Location = new System.Drawing.Point(25, 66);
+            this.btnRegistroCompra.Name = "btnRegistroCompra";
+            this.btnRegistroCompra.Size = new System.Drawing.Size(178, 57);
+            this.btnRegistroCompra.TabIndex = 30;
+            this.btnRegistroCompra.Text = "Registro de Compras";
+            this.btnRegistroCompra.UseVisualStyleBackColor = true;
+            this.btnRegistroCompra.Click += new System.EventHandler(this.btnRegistroCompra_Click);
             // 
             // panel25
             // 
@@ -751,12 +754,12 @@
         private Panel panel21;
         private Panel DropdownCompras;
         private Panel panel22;
-        private Button button1;
+        private Button btnBuscarCompraFornecedor;
         private Button btnGerenciarCompras;
         private Panel panel23;
         private Panel panel24;
-        private Button button5;
-        private Button button7;
+        private Button btnGerenciarCompraParcelada;
+        private Button btnRegistroCompra;
         private Panel panel25;
         private Button btnCompras;
     }

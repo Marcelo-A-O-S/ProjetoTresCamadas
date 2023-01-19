@@ -82,6 +82,7 @@ namespace WinFormsUI
             dataGridViewVendas.Columns[8].HeaderText = "Valor total do produto";
             dataGridViewVendas.Columns[8].DataPropertyName = "ValorTotalProduto";
             dataGridViewVendas.Columns[8].Name = "ValorTotalProduto";
+           
         }
         private void dataGridViewVendas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -161,6 +162,10 @@ namespace WinFormsUI
             {
                 textBoxParcelas.ReadOnly = false;
             }
+            if (comboBoxPagamento.Text != "Venda Parcelada")
+            {
+                textBoxParcelas.ReadOnly = true;
+            }
         }
         private async void btnAdicionarVenda_Click(object sender, EventArgs e)
         {
@@ -225,6 +230,7 @@ namespace WinFormsUI
                     venda.NomeCliente = cliente.Nome;
                     venda.DataDaVenda = DateTime.Now;
                     venda.TipoDePagamento = comboBoxPagamento.Text;
+                    venda.ValorPago = Convert.ToDecimal(textBoxValorPago.Text);
                     var retorno = gestaoVendas.SalvarVenda(venda);
                     MessageBox.Show(retorno);
                     venda = await gestaoVendas.BuscarVendaPor(x => x.Id == venda.Id);
@@ -247,6 +253,7 @@ namespace WinFormsUI
                         vendaParcelada.MesInicial = DateTime.Now.Month;
                         vendaParcelada.MesFinal = DateTime.Now.AddMonths(vendaParcelada.ParcelasRestantes).Month;
                         vendaParcelada.DataPagamentoInicial = venda.DataDaVenda;
+                        vendaParcelada.ValorPago = venda.ValorPago;
                         retorno = gestaoVendasParceladas.SalvarVendaParcelada(vendaParcelada);
                         MessageBox.Show(retorno);
                         MessageBox.Show("Receba o valor inicial da primeira parcela antes de prosseguir!");

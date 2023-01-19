@@ -57,6 +57,9 @@ namespace ProjetosTresCamadas.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("ValorPago")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<decimal>("ValorTotal")
                         .HasColumnType("decimal(18,2)");
 
@@ -96,6 +99,9 @@ namespace ProjetosTresCamadas.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("ValorDaParcela")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ValorPago")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("ValorRestante")
@@ -244,6 +250,9 @@ namespace ProjetosTresCamadas.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("ValorPago")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<decimal>("ValorTotal")
                         .HasColumnType("decimal(18,2)");
 
@@ -280,6 +289,9 @@ namespace ProjetosTresCamadas.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("ValorDaParcela")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ValorPago")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("ValorRestante")

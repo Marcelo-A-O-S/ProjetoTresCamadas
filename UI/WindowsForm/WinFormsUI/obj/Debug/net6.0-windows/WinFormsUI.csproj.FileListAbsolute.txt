@@ -80,3 +80,6 @@ C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinForm
 C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmGerenciarVendasParceladas.resources
 C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmBuscarVendaCliente.resources
 C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmGerenciarCompras.resources
+C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmBuscarCompraFornecedor.resources
+C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmGerenciarComprasParceladas.resources
+C:\ProjetoTresCamadas\UI\WindowsForm\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.FrmRegistroCompras.resources

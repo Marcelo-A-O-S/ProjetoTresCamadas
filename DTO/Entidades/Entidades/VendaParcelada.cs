@@ -23,6 +23,8 @@ namespace DTO.Entidades
 
         [ForeignKey("Venda")]
         public int VendaId { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal ValorPago { get; set; }
         public virtual Venda venda { get; set; }
         
 
