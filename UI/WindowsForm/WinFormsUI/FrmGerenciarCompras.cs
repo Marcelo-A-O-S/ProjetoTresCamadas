@@ -22,7 +22,7 @@ namespace WinFormsUI
         private GestaoCompraParcelada gestaoCompraParcelada = new();
         private GestaoProdutoComprado gestaoProdutoComprado = new();
         private GestaoCompra gestaoCompra = new();
-        private Funcionario funcionario = new();
+        private Funcionario funcionario;
         private Categoria categoria = new();
         private Fornecedor fornecedor = new();
         private Produto produto = new();
@@ -30,10 +30,11 @@ namespace WinFormsUI
         private Produto _produto = new();
         private ProdutoComprado produtoCompradoAcesso = new();
         private List<ProdutoComprado> produtos = new();
-        public FrmGerenciarCompras()
+        public FrmGerenciarCompras(Funcionario funcionario)
         {
+            this.funcionario = funcionario;
             InitializeComponent();
-            CarregarComboBoxFuncionario();
+            
             CarregarComboBoxFornecedor();
             CarregarComboBoxCategoria();
             CarregarComboBoxProduto();
@@ -116,20 +117,15 @@ namespace WinFormsUI
             comboBoxFornecedor.DataSource = gestaoFornecedores.ObterFornecedores().Result.Select(x=> x.NomeFantasia).ToList();
             comboBoxFornecedor.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
         }
-        private void CarregarComboBoxFuncionario()
-        {
-            comboBoxFuncionario.DataSource = gestaoFuncionarios.ObterFuncionarios().Result.Select(x=> x.Nome).ToList();
-            comboBoxFuncionario.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-        }
         private async void btnAdicionarCompra_Click(object sender, EventArgs e)
         {
-            if (comboBoxCategoria.Text != string.Empty && comboBoxProduto.Text != string.Empty && comboBoxFornecedor.Text != string.Empty && comboBoxFuncionario.Text != string.Empty && textBoxQuantidade.Text != string.Empty)
+            if (comboBoxCategoria.Text != string.Empty && comboBoxProduto.Text != string.Empty && comboBoxFornecedor.Text != string.Empty  && textBoxQuantidade.Text != string.Empty)
             {
                 var produtoComprado = new ProdutoComprado();
                 categoria = await gestaoCategorias.BuscarCategoriaPor(x => x.TipoCategoria == comboBoxCategoria.Text);
                 produto = await gestaoProdutos.BuscarProdutoPor(x => x.Nome == comboBoxProduto.Text);
                 fornecedor = await gestaoFornecedores.ObterFornecedorPor(x => x.NomeFantasia == comboBoxFornecedor.Text);
-                funcionario = await gestaoFuncionarios.BuscarFuncionarioPor(x => x.Nome == comboBoxFuncionario.Text);
+                
                 produtoComprado.Id = compra.QuantidadeComprados;
                 produtoComprado.NomeProduto = produto.Nome;
                 produtoComprado.ValorProduto = produto.Preco;
@@ -230,7 +226,6 @@ namespace WinFormsUI
                     if (comboBoxPagamento.Text != string.Empty)
                     {
                         fornecedor = await gestaoFornecedores.ObterFornecedorPor(x => x.NomeFantasia == comboBoxFornecedor.Text);
-                        funcionario = await gestaoFuncionarios.BuscarFuncionarioPor(x => x.Nome == comboBoxFuncionario.Text);
                         compra.Id = 0;
                         compra.QuantidadeComprados = produtos.Count;
                         compra.FuncionarioId = funcionario.Id;
@@ -239,6 +234,7 @@ namespace WinFormsUI
                         compra.NomeFantasiaFornecedor = fornecedor.NomeFantasia;
                         compra.DataDaCompra = DateTime.Now;
                         compra.TipoDePagamento = comboBoxPagamento.Text;
+                        compra.ValorPago = Convert.ToDecimal(textBoxValorPago.Text);
                         var retorno = gestaoCompra.SalvarCompra(compra);
                         MessageBox.Show(retorno);
                         compra = gestaoCompra.BuscarCompraPor(x => x.Id == compra.Id);
@@ -246,6 +242,7 @@ namespace WinFormsUI
                         {
                             produto.Id = 0;
                             produto.CompraId = compra.Id;
+                            
                             gestaoProdutoComprado.SalvarProdutoComprado(produto);
                             _produto = await gestaoProdutos.BuscarProdutoPor(x=> x.Nome == produto.NomeProduto && x.CategoriaId == produto.CategoriaId);
                             _produto.Estoque += produto.QuantidadeProdutos;
@@ -259,10 +256,11 @@ namespace WinFormsUI
                             compraParcelada.ParcelasRestantes = compraParcelada.QuantidadeParcelas - 1;
                             compraParcelada.ValorDaParcela = compra.ValorTotal / (compraParcelada.QuantidadeParcelas);
                             compraParcelada.ValorTotal = compra.ValorTotal;
-                            compraParcelada.ValorRestante = compraParcelada.ValorDaParcela - compraParcelada.ValorTotal;
+                            compraParcelada.ValorRestante = compra.ValorPago - compraParcelada.ValorTotal;
                             compraParcelada.MesInicial = DateTime.Now.Month;
                             compraParcelada.MesFinal = DateTime.Now.AddMonths(compraParcelada.ParcelasRestantes).Month;
                             compraParcelada.DataPagamentoInicial = compra.DataDaCompra;
+                            compraParcelada.ValorPago = compra.ValorPago;
                             retorno = gestaoCompraParcelada.SalvarCompraParcelada(compraParcelada);
                             MessageBox.Show(retorno);
                             MessageBox.Show("Receba o valor inicial da primeira parcela antes de prosseguir!");

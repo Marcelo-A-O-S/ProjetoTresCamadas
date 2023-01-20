@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjetoTresCamadas.Bussines.Services;
+using ProjetoTresCamadas.DTO.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +14,49 @@ namespace WinFormsUI
 {
     public partial class FrmLogin : Form
     {
-        public FrmLogin()
+        FrmMenuPrincipal frmMenu;
+        private Funcionario funcionario = new();
+        private GestaoFuncionarios gestaoFuncionarios = new();
+        public FrmLogin(FrmMenuPrincipal frmMenu)
         {
             InitializeComponent();
+            this.frmMenu = frmMenu;
         }
-
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+        private void btnAcessar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(textBoxNome.Text == String.Empty || textBoxSenha.Text == String.Empty)
+                {
+                    MessageBox.Show("Informe os dados");
+                }
+                else
+                {
+                    funcionario = gestaoFuncionarios.ObterFuncionarios().Result.Where(x => x.Nome == textBoxNome.Text && x.Senha == textBoxSenha.Text).FirstOrDefault();
+                    if(funcionario == null)
+                    {
+                        MessageBox.Show("Informe os campos corretamente");
+                    }
+                    else
+                    {
+                        frmMenu.funcionario = funcionario;
+                        this.Close();
+                        return;
+                    }
+                    
+                }
+            }catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DTO.Entidades;
+using ProjetoTresCamadas.Bussines.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +14,30 @@ namespace WinFormsUI
 {
     public partial class FrmBuscarCompraFornecedor : Form
     {
+        private GestaoFornecedores gestaoFornecedores = new();
+        private GestaoProdutoComprado gestaoProdutoComprado = new();
+        private GestaoCompra gestaoCompra = new();
+        private ProdutoComprado produtoComprado = new();
+        private Compra compra = new();
         public FrmBuscarCompraFornecedor()
         {
             InitializeComponent();
             CarregarDgvCompras();
             CarregarDgvProdutos();
+            CarregarComboBoxFornecedor();
+        }
+        private void CarregarComboBoxFornecedor()
+        {
+            try
+            {
+                var retorno = gestaoFornecedores.ObterFornecedores().Result.Select(x => x.NomeFantasia).ToList();
+                comboBoxFornecedor.DataSource = retorno;
+                comboBoxFornecedor.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
         }
         private void CarregarDgvProdutos()
         {
@@ -135,6 +156,103 @@ namespace WinFormsUI
                 dGVCompras.Columns[12].DataPropertyName = "ValorPago";
                 dGVCompras.Columns[12].Name = "ValorPago";
                 
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+        private void btnBuscarCompras_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBoxFornecedor.Text == String.Empty)
+                {
+                    MessageBox.Show("Preencha o campo Cliente!");
+                }
+                else
+                {
+                    dGVCompras.DataSource = gestaoCompra.ObterCompras().Result.Where(x => x.NomeFantasiaFornecedor == comboBoxFornecedor.Text).ToList();
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+        private void dGVCompras_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (dGVCompras.SelectedCells.Count == 1)
+                {
+                    MessageBox.Show("Selecione pelo indice da tabela!");
+                }
+                if (dGVCompras.SelectedRows.Count > 0)
+                {
+                    var line = dGVCompras.SelectedRows[0];
+                    if (line.Cells["Id"].Value != null)
+                    {
+                        var id = Convert.ToInt32(line.Cells["Id"].Value.ToString());
+                        dGVProdutos.DataSource = gestaoProdutoComprado.ObterProdutosComprados().Result.Where(x => x.CompraId == id).ToList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Busque as informacões referentes ao cliente antes de continuar!");
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+        private async void dGVProdutos_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (dGVProdutos.SelectedCells.Count == 1)
+                {
+                    MessageBox.Show("Selecione o indice da tabela!");
+                }
+                if (dGVProdutos.SelectedRows.Count > 0)
+                {
+                    var line = dGVProdutos.SelectedRows[0];
+                    if (line.Cells["Id"].Value != null)
+                    {
+                        var id = Convert.ToInt32(line.Cells["Id"].Value.ToString());
+                        produtoComprado = await gestaoProdutoComprado.BuscarProdutoCompradoPor(x => x.Id == id);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecione a venda antes de prosseguir!");
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+        private async void btnRemoverCompra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dGVProdutos.SelectedRows.Count > 0)
+                {
+                    var line = dGVProdutos.SelectedRows[0];
+                    var id = Convert.ToInt32(line.Cells["Id"].Value.ToString());
+                    produtoComprado = await gestaoProdutoComprado.BuscarProdutoCompradoPor(x => x.Id == id);
+                    var retorno = gestaoProdutoComprado.ExcluirProdutoComprado(produtoComprado);
+                    MessageBox.Show(retorno);
+                    compra =  gestaoCompra.BuscarCompraPor(x => x.Id == produtoComprado.CompraId);
+                    compra.QuantidadeComprados = compra.QuantidadeComprados - 1;
+                    gestaoCompra.SalvarCompra(compra);
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um registro de produto antes de prosseguir");
+                }
             }
             catch (Exception erro)
             {

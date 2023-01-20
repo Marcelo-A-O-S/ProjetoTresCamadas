@@ -1,4 +1,5 @@
-﻿using ProjetoTresCamadas.Bussines.Services;
+﻿using DTO.Entidades;
+using ProjetoTresCamadas.Bussines.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,10 @@ namespace WinFormsUI
     public partial class FrmGerenciarComprasParceladas : Form
     {
         private GestaoCompra gestaoCompra = new();
+        private GestaoProdutoComprado gestaoProdutoComprado = new();
+        private GestaoCompraParcelada gestaoCompraParcelada = new();
+        private Compra compra = new();
+        private CompraParcelada compraParcelada = new();
         public FrmGerenciarComprasParceladas()
         {
             InitializeComponent();
@@ -138,8 +143,146 @@ namespace WinFormsUI
         {
             try
             {
-                dGVRegistrosComprasParceladas.DataSource = gestaoCompra.ObterCompras().Result.Where(x => x.TipoDePagamento == "Compra Parcelada" && x.PagamentoRealizado == false && x.ValorPago == x.ValorTotal).ToList();
+                dGVRegistrosComprasParceladas.DataSource = gestaoCompra.ObterCompras().Result.Where(x => x.TipoDePagamento == "Compra Parcelada" && x.PagamentoRealizado == false && x.ValorPago < x.ValorTotal).ToList();
             }catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+        private async void btnPagarParcelaCompra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBoxPagamento.Text != String.Empty)
+                {
+                    if (dGVInfoCompraParcela.SelectedRows.Count > 0)
+                    {
+                        var valorPago = Convert.ToDecimal(textBoxPagamento.Text);
+                        compraParcelada.ValorRestante = compraParcelada.ValorRestante - valorPago;
+                        compraParcelada.ValorPago += valorPago;
+                        compraParcelada.ParcelasRestantes = compraParcelada.ParcelasRestantes - 1;
+                        var retorno = gestaoCompraParcelada.SalvarCompraParcelada(compraParcelada);
+                        //MessageBox.Show(retorno);
+                        if (compraParcelada.ValorPago >= compraParcelada.ValorTotal)
+                        {
+                            compra = gestaoCompra.BuscarCompraPor(x => x.Id == compraParcelada.CompraId);
+                            compra.ValorPago = compraParcelada.ValorPago;
+                            compra.PagamentoRealizado = true;
+                            gestaoCompra.SalvarCompra(compra);
+                            RecarregarGridCompraParceladas();
+                        }
+                        RecarregarGridCompraParceladas();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecione o registro da parcela");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Informe o valor do pagamento");
+                }
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+        private async void dGVRegistrosComprasParceladas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (dGVRegistrosComprasParceladas.SelectedRows.Count > 0)
+                {
+                    List<CompraParcelada> infoCompra = new();
+                    var line = dGVRegistrosComprasParceladas.SelectedRows[0];
+                    if (line.Cells["Id"].Value != null)
+                    {
+                        var Id = Convert.ToInt32(line.Cells["Id"].Value.ToString());
+                        compraParcelada =  gestaoCompraParcelada.BuscarCompraParceladaPor(x => x.CompraId == Id);
+                        infoCompra.Add(compraParcelada);
+                        dGVInfoCompraParcela.DataSource = infoCompra.ToList();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecione o registro de compra!");
+                }
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+        private void btnAbaterRegistro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dGVInfoCompraParcela.SelectedRows.Count > 0)
+                {
+                    compraParcelada.ValorRestante = compraParcelada.ValorRestante - compraParcelada.ValorRestante;
+                    compraParcelada.ParcelasRestantes = compraParcelada.ParcelasRestantes - compraParcelada.ParcelasRestantes;
+                    compraParcelada.ValorPago = compraParcelada.ValorTotal;
+                    var retorno = gestaoCompraParcelada.SalvarCompraParcelada(compraParcelada);
+                    MessageBox.Show(retorno);
+                    compra =  gestaoCompra.BuscarCompraPor(x => x.Id == compraParcelada.CompraId);
+                    compra.ValorPago = compraParcelada.ValorTotal;
+                    compra.PagamentoRealizado = true;
+                    gestaoCompra.SalvarCompra(compra);
+                    RecarregarGridCompraParceladas();
+                }
+                else
+                {
+                    MessageBox.Show("Selecione o registro da parcela");
+                }
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+        private void btnRemoverRegistro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dGVInfoCompraParcela.SelectedRows.Count > 0)
+                {
+                    var retorno = gestaoCompraParcelada.ExcluirCompraParcelada(compraParcelada);
+                    MessageBox.Show(retorno);
+                    var produtos = gestaoProdutoComprado.ObterProdutosComprados().Result.Where(x => x.CompraId == compraParcelada.CompraId).ToList();
+                    foreach (var produto in produtos)
+                    {
+                        gestaoProdutoComprado.ExcluirProdutoComprado(produto);
+                    }
+                    compra = gestaoCompra.BuscarCompraPor(x => x.Id == compraParcelada.CompraId);
+                    //venda.PagamentoRealizado = true;
+                    gestaoCompra.ExcluirCompra(compra);
+                    RecarregarGridCompraParceladas();
+                }
+                else
+                {
+                    MessageBox.Show("Selecione o registro da parcela");
+                }
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+        private void dGVInfoCompraParcela_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (dGVInfoCompraParcela.SelectedRows.Count > 0)
+                {
+
+                    var line = dGVRegistrosComprasParceladas.SelectedRows[0];
+                    var Id = Convert.ToInt32(line.Cells["Id"].Value.ToString());
+                    compraParcelada = gestaoCompraParcelada.BuscarCompraParceladaPor(x => x.CompraId == Id);
+                }
+            }
+            catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
             }

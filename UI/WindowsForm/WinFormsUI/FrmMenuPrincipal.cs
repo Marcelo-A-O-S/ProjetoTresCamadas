@@ -1,12 +1,22 @@
+using ProjetoTresCamadas.Bussines.Services;
+using ProjetoTresCamadas.DTO.Entidades;
+
 namespace WinFormsUI
 {
     public partial class FrmMenuPrincipal : Form
     {
+        public Funcionario funcionario = new();
         public Form FormAtivo;
+        private GestaoVendas GestaoVendas = new();
+        private GestaoCompra GestaoCompra = new();
         public FrmMenuPrincipal()
         {
+            var frmlogin = new FrmLogin(this);
+            frmlogin.ShowDialog();
             InitializeComponent();
             CustomizacaoMenu();
+            //MostrarForm(new FrmHome());
+
         }
         private void Redimensionamento()
         {
@@ -82,93 +92,78 @@ namespace WinFormsUI
                 DropdownName.Visible = false;
             }
         }
-
         private void btnFuncionarios_Click(object sender, EventArgs e)
         {
             OpenDropdown(DropdownFuncionarios);
         }
-
         private void btnFornecedores_Click(object sender, EventArgs e)
         {
             OpenDropdown(DropdownFornecedores);
         }
-
         private void btnProdutos_Click(object sender, EventArgs e)
         {
             OpenDropdown(DropdownProdutos);
         }
-
         private void btnClientes_Click_1(object sender, EventArgs e)
         {
             OpenDropdown(DropdownCliente);
         }
-
         private void btnClienteRegistrar_Click(object sender, EventArgs e)
         {
             MostrarForm(new FrmRegistrarCliente());
         }
-
         private void FrmMenuPrincipal_SizeChanged(object sender, EventArgs e)
         {
-            
             Redimensionamento();
         }
-
         private void btnClienteRemove_Click(object sender, EventArgs e)
         {
             MostrarForm(new FrmRemoverCliente());
         }
-
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            label1.Text = "Olá, seja bem vindo "+ funcionario.Nome;
+            labelValorVenda.Text = GestaoVendas.ObterVendas().Result.Sum(x=> x.ValorPago).ToString();
+            labelValorCompras.Text = GestaoCompra.ObterCompras().Result.Sum(x => x.ValorPago).ToString();
         }
-
         private void btnHome_Click(object sender, EventArgs e)
         {
+            labelValorCompras.Text = GestaoCompra.ObterCompras().Result.Sum(x => x.ValorPago).ToString();
+            labelValorVenda.Text = GestaoVendas.ObterVendas().Result.Sum(x => x.ValorPago).ToString();
             FecharFormsAtivado();
         }
-
         private void btnClienteListar_Click(object sender, EventArgs e)
         {
             MostrarForm(new FrmListagemClientes());
         }
-
         private void btnFuncionarioRegistrar_Click(object sender, EventArgs e)
         {
             MostrarForm(new FrmRegistrarFuncionario());
         }
-
         private void btnFornecedorRegistrar_Click(object sender, EventArgs e)
         {
             MostrarForm(new FrmRegistrarFornecedor());
         }
-
         private void btnGerenciarCategoria_Click(object sender, EventArgs e)
         {
             MostrarForm(new FrmGerenciarCategoria());
         }
-
         private void btnGerenciarProduto_Click(object sender, EventArgs e)
         {
             MostrarForm(new FrmGerenciarProdutos());
         }
-
         private void btnVendas_Click(object sender, EventArgs e)
         {
             OpenDropdown(DropdownVendas);
         }
-
         private void btnGerenciarVendas_Click(object sender, EventArgs e)
         {
-            MostrarForm(new FrmGerenciarVendas());
+            MostrarForm(new FrmGerenciarVendas(funcionario));
         }
-
         private void btnRegistroVendas_Click(object sender, EventArgs e)
         {
             MostrarForm(new FrmRegistroVendas());
         }
-
         private void btnGerenciarVendasParceladas_Click(object sender, EventArgs e)
         {
             MostrarForm(new FrmGerenciarVendasParceladas());
@@ -186,7 +181,7 @@ namespace WinFormsUI
 
         private void btnGerenciarCompras_Click(object sender, EventArgs e)
         {
-            MostrarForm(new FrmGerenciarCompras());
+            MostrarForm(new FrmGerenciarCompras(funcionario));
         }
 
         private void btnRegistroCompra_Click(object sender, EventArgs e)

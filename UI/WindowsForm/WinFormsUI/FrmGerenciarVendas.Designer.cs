@@ -49,8 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxCliente = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxFuncionario = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxPagamento = new System.Windows.Forms.ComboBox();
             this.panelGerenciarVendas.SuspendLayout();
@@ -192,8 +190,6 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboBoxCliente);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBoxFuncionario);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(67, 63);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(865, 196);
@@ -230,7 +226,7 @@
             // textBoxQuantidade
             // 
             this.textBoxQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxQuantidade.Location = new System.Drawing.Point(692, 63);
+            this.textBoxQuantidade.Location = new System.Drawing.Point(541, 63);
             this.textBoxQuantidade.Name = "textBoxQuantidade";
             this.textBoxQuantidade.Size = new System.Drawing.Size(150, 20);
             this.textBoxQuantidade.TabIndex = 9;
@@ -238,7 +234,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(691, 37);
+            this.label5.Location = new System.Drawing.Point(540, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 20);
             this.label5.TabIndex = 8;
@@ -250,7 +246,7 @@
             this.comboBoxProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxProduto.FormattingEnabled = true;
-            this.comboBoxProduto.Location = new System.Drawing.Point(522, 60);
+            this.comboBoxProduto.Location = new System.Drawing.Point(371, 60);
             this.comboBoxProduto.Name = "comboBoxProduto";
             this.comboBoxProduto.Size = new System.Drawing.Size(151, 28);
             this.comboBoxProduto.TabIndex = 7;
@@ -259,7 +255,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Location = new System.Drawing.Point(522, 37);
+            this.label4.Location = new System.Drawing.Point(371, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 20);
             this.label4.TabIndex = 6;
@@ -269,7 +265,7 @@
             // 
             this.comboBoxCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCategoria.FormattingEnabled = true;
-            this.comboBoxCategoria.Location = new System.Drawing.Point(354, 60);
+            this.comboBoxCategoria.Location = new System.Drawing.Point(203, 60);
             this.comboBoxCategoria.Name = "comboBoxCategoria";
             this.comboBoxCategoria.Size = new System.Drawing.Size(151, 28);
             this.comboBoxCategoria.TabIndex = 5;
@@ -278,7 +274,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Location = new System.Drawing.Point(354, 37);
+            this.label3.Location = new System.Drawing.Point(203, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 20);
             this.label3.TabIndex = 4;
@@ -290,7 +286,7 @@
             this.comboBoxCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCliente.FormattingEnabled = true;
-            this.comboBoxCliente.Location = new System.Drawing.Point(186, 60);
+            this.comboBoxCliente.Location = new System.Drawing.Point(35, 60);
             this.comboBoxCliente.Name = "comboBoxCliente";
             this.comboBoxCliente.Size = new System.Drawing.Size(151, 28);
             this.comboBoxCliente.TabIndex = 3;
@@ -301,30 +297,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Location = new System.Drawing.Point(186, 37);
+            this.label2.Location = new System.Drawing.Point(35, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Cliente";
-            // 
-            // comboBoxFuncionario
-            // 
-            this.comboBoxFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxFuncionario.FormattingEnabled = true;
-            this.comboBoxFuncionario.Location = new System.Drawing.Point(18, 60);
-            this.comboBoxFuncionario.Name = "comboBoxFuncionario";
-            this.comboBoxFuncionario.Size = new System.Drawing.Size(151, 28);
-            this.comboBoxFuncionario.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Location = new System.Drawing.Point(18, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Funcionário";
             // 
             // label6
             // 
@@ -378,8 +355,6 @@
 
         private Panel panelGerenciarVendas;
         private GroupBox groupBox1;
-        private Label label1;
-        private ComboBox comboBoxFuncionario;
         private ComboBox comboBoxCategoria;
         private Label label3;
         private ComboBox comboBoxCliente;

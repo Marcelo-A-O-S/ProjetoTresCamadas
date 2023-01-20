@@ -13,6 +13,7 @@ namespace WinFormsUI
 {
     public partial class FrmRegistroCompras : Form
     {
+        private GestaoProdutoComprado gestaoProdutoComprado = new();
         private GestaoCompra gestaoCompra = new();
         public FrmRegistroCompras()
         {
@@ -20,14 +21,13 @@ namespace WinFormsUI
             CarregarDgvCompras();
             CarregarDgvProdutos();
         }
-
         private void CarregarDgvProdutos()
         {
             try
             {
                 dGVProdutosCompras.EditMode = DataGridViewEditMode.EditProgrammatically;
                 dGVProdutosCompras.MultiSelect = false;
-                dGVProdutosCompras.ColumnCount = 12;
+                dGVProdutosCompras.ColumnCount = 13;
                 dGVProdutosCompras.Columns[0].HeaderText = "Id";
                 dGVProdutosCompras.Columns[0].DataPropertyName = "Id";
                 dGVProdutosCompras.Columns[0].Name = "Id";
@@ -52,9 +52,9 @@ namespace WinFormsUI
                 dGVProdutosCompras.Columns[5].DataPropertyName = "FornecedorId";
                 dGVProdutosCompras.Columns[5].Name = "FornecedorId";
                 dGVProdutosCompras.Columns[5].Visible = false;
-                dGVProdutosCompras.Columns[6].HeaderText = "Nome do Cliente";
-                dGVProdutosCompras.Columns[6].DataPropertyName = "NomeFantasiaFornecedor";
-                dGVProdutosCompras.Columns[6].Name = "NomeFantasiaFornecedor";
+                dGVProdutosCompras.Columns[6].HeaderText = "Nome do Fornecedor";
+                dGVProdutosCompras.Columns[6].DataPropertyName = "NomeFornecedor";
+                dGVProdutosCompras.Columns[6].Name = "NomeFornecedor";
                 dGVProdutosCompras.Columns[6].Width = 150;
                 dGVProdutosCompras.Columns[7].HeaderText = "CompraId";
                 dGVProdutosCompras.Columns[7].DataPropertyName = "CompraId";
@@ -76,7 +76,12 @@ namespace WinFormsUI
                 dGVProdutosCompras.Columns[11].DataPropertyName = "categoria";
                 dGVProdutosCompras.Columns[11].Name = "categoria";
                 dGVProdutosCompras.Columns[11].Visible = false;
-            }catch(Exception erro)
+                dGVProdutosCompras.Columns[12].HeaderText = "fornecedor";
+                dGVProdutosCompras.Columns[12].DataPropertyName = "fornecedor";
+                dGVProdutosCompras.Columns[12].Name = "fornecedor";
+                dGVProdutosCompras.Columns[12].Visible = false;
+            }
+            catch(Exception erro)
             {
                 MessageBox.Show(erro.Message);
             }
@@ -148,6 +153,30 @@ namespace WinFormsUI
             try
             {
                 dGVRegistrosCompras.DataSource = gestaoCompra.ObterCompras().Result.ToList();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+        private void dGVRegistrosCompras_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (dGVRegistrosCompras.SelectedRows.Count > 0)
+                {
+                    var line = dGVRegistrosCompras.SelectedRows[0];
+                    if (line.Cells["Id"].Value != null)
+                    {
+                        var id = Convert.ToInt32(line.Cells["Id"].Value);
+                        var produtosComprados = gestaoProdutoComprado.ObterProdutosComprados().Result.Where(x => x.CompraId == id).ToList();
+                        dGVProdutosCompras.DataSource = produtosComprados;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecione um registro!");
+                    }
+                }
             }
             catch (Exception erro)
             {

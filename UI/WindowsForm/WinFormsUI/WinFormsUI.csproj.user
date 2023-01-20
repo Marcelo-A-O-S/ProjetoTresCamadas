@@ -25,6 +25,9 @@
     <Compile Update="FrmGerenciarVendasParceladas.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmListagemClientes.cs">
       <SubType>Form</SubType>
     </Compile>

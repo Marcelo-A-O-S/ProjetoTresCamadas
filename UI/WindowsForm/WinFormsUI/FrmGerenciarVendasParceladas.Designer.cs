@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelGerenciarVendasParceladas = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxPagamento = new System.Windows.Forms.TextBox();
             this.btnPagarParcela = new System.Windows.Forms.Button();
             this.btnAbaterRegistro = new System.Windows.Forms.Button();
             this.btnRemoverRegistro = new System.Windows.Forms.Button();
@@ -43,6 +45,8 @@
             // 
             // panelGerenciarVendasParceladas
             // 
+            this.panelGerenciarVendasParceladas.Controls.Add(this.label3);
+            this.panelGerenciarVendasParceladas.Controls.Add(this.textBoxPagamento);
             this.panelGerenciarVendasParceladas.Controls.Add(this.btnPagarParcela);
             this.panelGerenciarVendasParceladas.Controls.Add(this.btnAbaterRegistro);
             this.panelGerenciarVendasParceladas.Controls.Add(this.btnRemoverRegistro);
@@ -55,6 +59,25 @@
             this.panelGerenciarVendasParceladas.Name = "panelGerenciarVendasParceladas";
             this.panelGerenciarVendasParceladas.Size = new System.Drawing.Size(1010, 745);
             this.panelGerenciarVendasParceladas.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(286, 634);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(161, 20);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Pagamento da parcela:";
+            // 
+            // textBoxPagamento
+            // 
+            this.textBoxPagamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPagamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPagamento.Location = new System.Drawing.Point(284, 660);
+            this.textBoxPagamento.Name = "textBoxPagamento";
+            this.textBoxPagamento.Size = new System.Drawing.Size(164, 20);
+            this.textBoxPagamento.TabIndex = 26;
             // 
             // btnPagarParcela
             // 
@@ -169,5 +192,7 @@
         private Button btnPagarParcela;
         private Button btnAbaterRegistro;
         private Button btnRemoverRegistro;
+        private Label label3;
+        private TextBox textBoxPagamento;
     }
 }

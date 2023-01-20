@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPagarParcela = new System.Windows.Forms.Button();
+            this.btnPagarParcelaCompra = new System.Windows.Forms.Button();
             this.btnAbaterRegistro = new System.Windows.Forms.Button();
             this.btnRemoverRegistro = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dGVInfoCompraParcela = new System.Windows.Forms.DataGridView();
             this.dGVRegistrosComprasParceladas = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxPagamento = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVInfoCompraParcela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVRegistrosComprasParceladas)).BeginInit();
@@ -43,7 +45,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnPagarParcela);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.textBoxPagamento);
+            this.panel1.Controls.Add(this.btnPagarParcelaCompra);
             this.panel1.Controls.Add(this.btnAbaterRegistro);
             this.panel1.Controls.Add(this.btnRemoverRegistro);
             this.panel1.Controls.Add(this.label2);
@@ -56,16 +60,17 @@
             this.panel1.Size = new System.Drawing.Size(1010, 745);
             this.panel1.TabIndex = 0;
             // 
-            // btnPagarParcela
+            // btnPagarParcelaCompra
             // 
-            this.btnPagarParcela.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPagarParcela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagarParcela.Location = new System.Drawing.Point(661, 648);
-            this.btnPagarParcela.Name = "btnPagarParcela";
-            this.btnPagarParcela.Size = new System.Drawing.Size(133, 61);
-            this.btnPagarParcela.TabIndex = 32;
-            this.btnPagarParcela.Text = "Pagar parcela";
-            this.btnPagarParcela.UseVisualStyleBackColor = true;
+            this.btnPagarParcelaCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPagarParcelaCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagarParcelaCompra.Location = new System.Drawing.Point(661, 648);
+            this.btnPagarParcelaCompra.Name = "btnPagarParcelaCompra";
+            this.btnPagarParcelaCompra.Size = new System.Drawing.Size(133, 61);
+            this.btnPagarParcelaCompra.TabIndex = 32;
+            this.btnPagarParcelaCompra.Text = "Pagar parcela";
+            this.btnPagarParcelaCompra.UseVisualStyleBackColor = true;
+            this.btnPagarParcelaCompra.Click += new System.EventHandler(this.btnPagarParcelaCompra_Click);
             // 
             // btnAbaterRegistro
             // 
@@ -79,6 +84,7 @@
             this.btnAbaterRegistro.TabIndex = 31;
             this.btnAbaterRegistro.Text = "Abater Registro Parcela";
             this.btnAbaterRegistro.UseVisualStyleBackColor = false;
+            this.btnAbaterRegistro.Click += new System.EventHandler(this.btnAbaterRegistro_Click);
             // 
             // btnRemoverRegistro
             // 
@@ -92,6 +98,7 @@
             this.btnRemoverRegistro.TabIndex = 30;
             this.btnRemoverRegistro.Text = "Remover registro parcela";
             this.btnRemoverRegistro.UseVisualStyleBackColor = false;
+            this.btnRemoverRegistro.Click += new System.EventHandler(this.btnRemoverRegistro_Click);
             // 
             // label2
             // 
@@ -124,6 +131,7 @@
             this.dGVInfoCompraParcela.RowTemplate.Height = 29;
             this.dGVInfoCompraParcela.Size = new System.Drawing.Size(935, 140);
             this.dGVInfoCompraParcela.TabIndex = 27;
+            this.dGVInfoCompraParcela.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dGVInfoCompraParcela_CellMouseClick);
             // 
             // dGVRegistrosComprasParceladas
             // 
@@ -135,6 +143,26 @@
             this.dGVRegistrosComprasParceladas.RowTemplate.Height = 29;
             this.dGVRegistrosComprasParceladas.Size = new System.Drawing.Size(935, 312);
             this.dGVRegistrosComprasParceladas.TabIndex = 26;
+            this.dGVRegistrosComprasParceladas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dGVRegistrosComprasParceladas_CellMouseClick);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(259, 648);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(161, 20);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Pagamento da parcela:";
+            // 
+            // textBoxPagamento
+            // 
+            this.textBoxPagamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPagamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPagamento.Location = new System.Drawing.Point(257, 674);
+            this.textBoxPagamento.Name = "textBoxPagamento";
+            this.textBoxPagamento.Size = new System.Drawing.Size(164, 20);
+            this.textBoxPagamento.TabIndex = 28;
             // 
             // FrmGerenciarComprasParceladas
             // 
@@ -157,12 +185,14 @@
         #endregion
 
         private Panel panel1;
-        private Button btnPagarParcela;
+        private Button btnPagarParcelaCompra;
         private Button btnAbaterRegistro;
         private Button btnRemoverRegistro;
         private Label label2;
         private Label label1;
         private DataGridView dGVInfoCompraParcela;
         private DataGridView dGVRegistrosComprasParceladas;
+        private Label label3;
+        private TextBox textBoxPagamento;
     }
 }

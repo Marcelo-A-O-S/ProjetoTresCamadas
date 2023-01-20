@@ -91,6 +91,7 @@
             this.dGVRegistrosCompras.RowTemplate.Height = 29;
             this.dGVRegistrosCompras.Size = new System.Drawing.Size(935, 305);
             this.dGVRegistrosCompras.TabIndex = 4;
+            this.dGVRegistrosCompras.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dGVRegistrosCompras_CellMouseClick);
             // 
             // FrmRegistroCompras
             // 

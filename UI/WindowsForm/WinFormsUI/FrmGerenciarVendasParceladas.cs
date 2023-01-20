@@ -16,6 +16,7 @@ namespace WinFormsUI
     {
         private GestaoVendas gestaoVendas = new();
         private GestaoVendasParceladas gestaoVendasParceladas = new();
+        private GestaoProdutosVendidos gestaoProdutosVendidos = new();
         private VendaParcelada vendaParcelada = new();
         private Venda venda = new();
         public FrmGerenciarVendasParceladas()
@@ -83,6 +84,7 @@ namespace WinFormsUI
         {
             try
             {
+
                 dGVRegistrosVendasParceladas.EditMode = DataGridViewEditMode.EditProgrammatically;
                 dGVRegistrosVendasParceladas.MultiSelect = false;
                 dGVRegistrosVendasParceladas.ColumnCount = 13;
@@ -144,7 +146,7 @@ namespace WinFormsUI
         {
             try
             {
-                dGVRegistrosVendasParceladas.DataSource = gestaoVendas.ObterVendas().Result.Where(x => x.TipoDePagamento == "Venda Parcelada" && x.PagamentoRealizado == false && x.ValorPago == x.ValorTotal).ToList();
+                dGVRegistrosVendasParceladas.DataSource = gestaoVendas.ObterVendas().Result.Where(x => x.TipoDePagamento == "Venda Parcelada" && x.PagamentoRealizado == false && x.ValorPago < x.ValorTotal).ToList();
             }catch(Exception erro)
             {
                 MessageBox.Show(erro.Message);
@@ -177,25 +179,43 @@ namespace WinFormsUI
         }
         private async void btnPagarParcela_Click(object sender, EventArgs e)
         {
-            if (dGVInfoParcela.SelectedRows.Count > 0)
+            try
             {
-                vendaParcelada.ValorRestante = vendaParcelada.ValorRestante - vendaParcelada.ValorDaParcela;
-                vendaParcelada.ValorPago += vendaParcelada.ValorDaParcela;
-                vendaParcelada.ParcelasRestantes = vendaParcelada.ParcelasRestantes - 1;
-                //var retorno = gestaoVendasParceladas.SalvarVendaParcelada(vendaParcelada);
-                //MessageBox.Show(retorno);
-                if(vendaParcelada.ParcelasRestantes == 0)
+                if(textBoxPagamento.Text != String.Empty)
                 {
-                    venda = await gestaoVendas.BuscarVendaPor(x => x.Id == vendaParcelada.VendaId);
-                    venda.ValorPago += vendaParcelada.ValorDaParcela;
-                    venda.PagamentoRealizado = true;
-                    //gestaoVendas.SalvarVenda(venda);
+                    if (dGVInfoParcela.SelectedRows.Count > 0)
+                    {
+                        var valorPago = Convert.ToDecimal(textBoxPagamento.Text);
+                        vendaParcelada.ValorRestante = vendaParcelada.ValorRestante - valorPago;
+                        vendaParcelada.ValorPago += valorPago;
+                        vendaParcelada.ParcelasRestantes = vendaParcelada.ParcelasRestantes - 1;
+                        //var retorno = gestaoVendasParceladas.SalvarVendaParcelada(vendaParcelada);
+                        //MessageBox.Show(retorno);
+                        if (vendaParcelada.ValorPago >= vendaParcelada.ValorTotal)
+                        {
+                            venda = await gestaoVendas.BuscarVendaPor(x => x.Id == vendaParcelada.VendaId);
+                            venda.ValorPago += vendaParcelada.ValorDaParcela;
+                            venda.PagamentoRealizado = true;
+                            //gestaoVendas.SalvarVenda(venda);
+                            RecarregarGridVendasParceladas();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecione o registro da parcela");
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Informe o valor do pagamento");
+                }
+                
             }
-            else
+            catch(Exception erro)
             {
-                MessageBox.Show("Selecione o registro da parcela");
+                MessageBox.Show(erro.Message);
             }
+            
         }
         private async void btnAbaterRegistro_Click(object sender, EventArgs e)
         {
@@ -212,6 +232,7 @@ namespace WinFormsUI
                     venda.ValorPago = vendaParcelada.ValorTotal;
                     venda.PagamentoRealizado = true;
                     gestaoVendas.SalvarVenda(venda);
+                    RecarregarGridVendasParceladas();
                 }
                 else
                 {
@@ -230,9 +251,15 @@ namespace WinFormsUI
                 {
                     var retorno = gestaoVendasParceladas.ExcluirVendaParcelada(vendaParcelada);
                     MessageBox.Show(retorno);
+                    var produtos = gestaoProdutosVendidos.ObterProdutosVendidos().Result.Where(x => x.VendaId == vendaParcelada.VendaId).ToList();
+                    foreach (var produto in produtos)
+                    {
+                        gestaoProdutosVendidos.ExcluirProdutoVendido(produto);
+                    }
                     venda = await gestaoVendas.BuscarVendaPor(x => x.Id == vendaParcelada.VendaId);
-                    venda.PagamentoRealizado = true;
+                    //venda.PagamentoRealizado = true;
                     gestaoVendas.ExcluirVenda(venda);
+                    RecarregarGridVendasParceladas();
                 }
                 else
                 {

@@ -28,19 +28,19 @@ namespace WinFormsUI
         private ProdutoVendido produtoVendidoAcesso = new();
         private Produto produto = new();
         private Cliente cliente = new();
-        private Funcionario funcionario = new();
+        private Funcionario funcionario;
         private Venda venda = new();
         private Categoria categoria = new();
-        public FrmGerenciarVendas()
+        public FrmGerenciarVendas(Funcionario funcionario)
         {
             InitializeComponent();
+            this.funcionario = funcionario;
         }
 
         private void FrmGerenciarVendas_Load(object sender, EventArgs e)
         {
 
             carregarComboBoxCategoria();
-            carregarComboBoxFuncionario();
             carregarComboBoxProduto();
             carregarComboBoxCliente();
             carregarDgvVendaHeader();
@@ -140,10 +140,6 @@ namespace WinFormsUI
         {
             comboBoxProduto.DataSource = gestaoProdutos.ObterProdutos().Result.Select(x=> x.Nome).ToList();
         }
-        private async void carregarComboBoxFuncionario()
-        {
-            comboBoxFuncionario.DataSource = gestaoFuncionarios.ObterFuncionarios().Result.Select(x => x.Nome).ToList();
-        }
         private async void carregarComboBoxCategoria()
         {
             comboBoxCategoria.DataSource = gestaoCategorias.ObterCategorias().Result.Select(x => x.TipoCategoria).ToList();
@@ -169,27 +165,35 @@ namespace WinFormsUI
         }
         private async void btnAdicionarVenda_Click(object sender, EventArgs e)
         {
-            if(comboBoxCategoria.Text != string.Empty && comboBoxProduto.Text != string.Empty && comboBoxCliente.Text != string.Empty && comboBoxFuncionario.Text != string.Empty && textBoxQuantidade.Text != string.Empty)
+            if(comboBoxCategoria.Text != string.Empty && comboBoxProduto.Text != string.Empty && comboBoxCliente.Text != string.Empty  && textBoxQuantidade.Text != string.Empty)
             {
                 ProdutoVendido produtoVendido = new();
                 categoria = await gestaoCategorias.BuscarCategoriaPor(x => x.TipoCategoria == comboBoxCategoria.Text);
                 produto = await gestaoProdutos.BuscarProdutoPor(x => x.Nome == comboBoxProduto.Text);
                 cliente = await gestaoClientes.BuscarCliente(x => x.Nome == comboBoxCliente.Text);
-                funcionario = await gestaoFuncionarios.BuscarFuncionarioPor(x => x.Nome == comboBoxFuncionario.Text);
-                produtoVendido.Id = venda.QuantidadeVendidos;
-                produtoVendido.NomeProduto = produto.Nome;
-                produtoVendido.ValorProduto = produto.Preco;
-                produtoVendido.QuantidadeProdutos = Convert.ToInt32(textBoxQuantidade.Text);
-                produtoVendido.ValorTotalProduto = produtoVendido.QuantidadeProdutos * produtoVendido.ValorProduto;
-                produtoVendido.ClienteId = cliente.Id;
-                produtoVendido.NomeCliente = cliente.Nome;
-                produtoVendido.CategoriaId = categoria.Id;
-                produtoVendido.CategoriaNome = categoria.TipoCategoria;
-                venda.ValorTotal += produtoVendido.ValorTotalProduto;
-                produtos.Add(produtoVendido);
-                venda.QuantidadeVendidos = produtos.Count;
-                labelValorTotal.Text = venda.ValorTotal.ToString();
-                RecarregarDgvVendas();
+                var quantidadeProdutos = Convert.ToInt32(textBoxQuantidade.Text);
+                if(quantidadeProdutos <= produto.Estoque)
+                {
+                    produtoVendido.Id = venda.QuantidadeVendidos;
+                    produtoVendido.NomeProduto = produto.Nome;
+                    produtoVendido.ValorProduto = produto.Preco;
+                    produtoVendido.QuantidadeProdutos = quantidadeProdutos;
+                    produtoVendido.ValorTotalProduto = produtoVendido.QuantidadeProdutos * produtoVendido.ValorProduto;
+                    produtoVendido.ClienteId = cliente.Id;
+                    produtoVendido.NomeCliente = cliente.Nome;
+                    produtoVendido.CategoriaId = categoria.Id;
+                    produtoVendido.CategoriaNome = categoria.TipoCategoria;
+                    venda.ValorTotal += produtoVendido.ValorTotalProduto;
+                    produtos.Add(produtoVendido);
+                    venda.QuantidadeVendidos = produtos.Count;
+                    labelValorTotal.Text = venda.ValorTotal.ToString();
+                    RecarregarDgvVendas();
+                }
+                else
+                {
+                    MessageBox.Show("O produto está em falta, encomende com urgencia com um fornecedor!");
+                }
+                
             }
             else
             {
@@ -221,7 +225,7 @@ namespace WinFormsUI
                 if (comboBoxPagamento.Text != string.Empty)
                 {
                     cliente = await gestaoClientes.BuscarCliente(x => x.Nome == comboBoxCliente.Text);
-                    funcionario = await gestaoFuncionarios.BuscarFuncionarioPor(x => x.Nome == comboBoxFuncionario.Text);
+                    
                     venda.Id = 0;
                     venda.QuantidadeVendidos = produtos.Count;
                     venda.FuncionarioId = funcionario.Id;
@@ -234,11 +238,14 @@ namespace WinFormsUI
                     var retorno = gestaoVendas.SalvarVenda(venda);
                     MessageBox.Show(retorno);
                     venda = await gestaoVendas.BuscarVendaPor(x => x.Id == venda.Id);
-                    foreach (var produto in produtos)
+                    foreach (var _produto in produtos)
                     {
-                        produto.Id = 0;
-                        produto.VendaId = venda.Id;
-                        gestaoProdutosVendidos.SalvarProdutoVendido(produto);
+                        _produto.Id = 0;
+                        _produto.VendaId = venda.Id;
+                        gestaoProdutosVendidos.SalvarProdutoVendido(_produto);
+                        produto =  gestaoProdutos.ObterProdutos().Result.Where(x => x.Nome == _produto.NomeProduto && x.CategoriaId == _produto.CategoriaId).FirstOrDefault();
+                        produto.Estoque = produto.Estoque - 1;
+                        gestaoProdutos.SalvarProduto(produto);
                     }
 
                     if (venda.TipoDePagamento == "Venda Parcelada")
@@ -249,7 +256,7 @@ namespace WinFormsUI
                         vendaParcelada.ParcelasRestantes = vendaParcelada.QuantidadeParcelas - 1;
                         vendaParcelada.ValorDaParcela = venda.ValorTotal / (vendaParcelada.QuantidadeParcelas );
                         vendaParcelada.ValorTotal = venda.ValorTotal;
-                        vendaParcelada.ValorRestante = vendaParcelada.ValorDaParcela - vendaParcelada.ValorTotal;
+                        vendaParcelada.ValorRestante = venda.ValorPago - vendaParcelada.ValorTotal;
                         vendaParcelada.MesInicial = DateTime.Now.Month;
                         vendaParcelada.MesFinal = DateTime.Now.AddMonths(vendaParcelada.ParcelasRestantes).Month;
                         vendaParcelada.DataPagamentoInicial = venda.DataDaVenda;

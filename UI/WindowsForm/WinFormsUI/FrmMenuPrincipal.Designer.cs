@@ -73,7 +73,13 @@
             this.panelUser = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.PanelContent = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.labelValorVenda = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelValorCompras = new System.Windows.Forms.Label();
             this.Menu.SuspendLayout();
             this.panel4.SuspendLayout();
             this.DropdownCompras.SuspendLayout();
@@ -83,6 +89,8 @@
             this.DropdownFuncionarios.SuspendLayout();
             this.DropdownCliente.SuspendLayout();
             this.PanelContent.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // Menu
@@ -670,6 +678,8 @@
             // 
             this.PanelContent.AutoSize = true;
             this.PanelContent.BackColor = System.Drawing.Color.FloralWhite;
+            this.PanelContent.Controls.Add(this.panel5);
+            this.PanelContent.Controls.Add(this.panel3);
             this.PanelContent.Controls.Add(this.label1);
             this.PanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContent.Location = new System.Drawing.Point(315, 42);
@@ -677,14 +687,83 @@
             this.PanelContent.Size = new System.Drawing.Size(918, 784);
             this.PanelContent.TabIndex = 2;
             // 
+            // panel5
+            // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel5.BackColor = System.Drawing.Color.Lime;
+            this.panel5.Controls.Add(this.labelValorVenda);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Location = new System.Drawing.Point(474, 289);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(254, 160);
+            this.panel5.TabIndex = 2;
+            // 
+            // labelValorVenda
+            // 
+            this.labelValorVenda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelValorVenda.AutoSize = true;
+            this.labelValorVenda.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelValorVenda.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelValorVenda.Location = new System.Drawing.Point(91, 57);
+            this.labelValorVenda.Name = "labelValorVenda";
+            this.labelValorVenda.Size = new System.Drawing.Size(77, 38);
+            this.labelValorVenda.TabIndex = 1;
+            this.labelValorVenda.Text = "0000";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(47, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(154, 22);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Valor de Vendas";
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.BackColor = System.Drawing.Color.Red;
+            this.panel3.Controls.Add(this.labelValorCompras);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(149, 289);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(254, 160);
+            this.panel3.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(80, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 22);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Gastos";
+            // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(118, 80);
+            this.label1.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(222, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.Size = new System.Drawing.Size(398, 36);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Home";
+            this.label1.Text = "Olá, seja bem vindo user";
+            // 
+            // labelValorCompras
+            // 
+            this.labelValorCompras.AutoSize = true;
+            this.labelValorCompras.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelValorCompras.ForeColor = System.Drawing.Color.White;
+            this.labelValorCompras.Location = new System.Drawing.Point(80, 57);
+            this.labelValorCompras.Name = "labelValorCompras";
+            this.labelValorCompras.Size = new System.Drawing.Size(77, 38);
+            this.labelValorCompras.TabIndex = 1;
+            this.labelValorCompras.Text = "0000";
             // 
             // FrmMenuPrincipal
             // 
@@ -709,6 +788,10 @@
             this.DropdownCliente.ResumeLayout(false);
             this.PanelContent.ResumeLayout(false);
             this.PanelContent.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -741,7 +824,6 @@
         private Button btnClientes;
         private Button btnHome;
         private Panel panel1;
-        private Label label1;
         private Button btnVendas;
         private Panel DropdownVendas;
         private Panel panel8;
@@ -762,5 +844,12 @@
         private Button btnRegistroCompra;
         private Panel panel25;
         private Button btnCompras;
+        private Label label1;
+        private Panel panel3;
+        private Label label2;
+        private Panel panel5;
+        private Label label3;
+        private Label labelValorVenda;
+        private Label labelValorCompras;
     }
 }

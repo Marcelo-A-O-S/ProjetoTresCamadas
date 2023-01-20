@@ -34,10 +34,10 @@
             this.dGVProdutos = new System.Windows.Forms.DataGridView();
             this.dGVCompras = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBuscarVendas = new System.Windows.Forms.Button();
-            this.comboBoxClienteVenda = new System.Windows.Forms.ComboBox();
+            this.btnBuscarCompras = new System.Windows.Forms.Button();
+            this.comboBoxFornecedor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnRemoverVenda = new System.Windows.Forms.Button();
+            this.btnRemoverCompra = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVCompras)).BeginInit();
@@ -51,7 +51,7 @@
             this.panel1.Controls.Add(this.dGVProdutos);
             this.panel1.Controls.Add(this.dGVCompras);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.btnRemoverVenda);
+            this.panel1.Controls.Add(this.btnRemoverCompra);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -88,6 +88,7 @@
             this.dGVProdutos.RowTemplate.Height = 29;
             this.dGVProdutos.Size = new System.Drawing.Size(917, 229);
             this.dGVProdutos.TabIndex = 27;
+            this.dGVProdutos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dGVProdutos_CellMouseClick);
             // 
             // dGVCompras
             // 
@@ -99,12 +100,13 @@
             this.dGVCompras.RowTemplate.Height = 29;
             this.dGVCompras.Size = new System.Drawing.Size(917, 194);
             this.dGVCompras.TabIndex = 26;
+            this.dGVCompras.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dGVCompras_CellMouseClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.btnBuscarVendas);
-            this.groupBox1.Controls.Add(this.comboBoxClienteVenda);
+            this.groupBox1.Controls.Add(this.btnBuscarCompras);
+            this.groupBox1.Controls.Add(this.comboBoxFornecedor);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(72, 8);
             this.groupBox1.Name = "groupBox1";
@@ -113,28 +115,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar vendas por Fornecedor";
             // 
-            // btnBuscarVendas
+            // btnBuscarCompras
             // 
-            this.btnBuscarVendas.BackColor = System.Drawing.Color.Navy;
-            this.btnBuscarVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarVendas.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarVendas.Location = new System.Drawing.Point(220, 54);
-            this.btnBuscarVendas.Name = "btnBuscarVendas";
-            this.btnBuscarVendas.Size = new System.Drawing.Size(105, 42);
-            this.btnBuscarVendas.TabIndex = 22;
-            this.btnBuscarVendas.Text = "Buscar";
-            this.btnBuscarVendas.UseVisualStyleBackColor = false;
+            this.btnBuscarCompras.BackColor = System.Drawing.Color.Navy;
+            this.btnBuscarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCompras.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarCompras.Location = new System.Drawing.Point(220, 54);
+            this.btnBuscarCompras.Name = "btnBuscarCompras";
+            this.btnBuscarCompras.Size = new System.Drawing.Size(105, 42);
+            this.btnBuscarCompras.TabIndex = 22;
+            this.btnBuscarCompras.Text = "Buscar";
+            this.btnBuscarCompras.UseVisualStyleBackColor = false;
+            this.btnBuscarCompras.Click += new System.EventHandler(this.btnBuscarCompras_Click);
             // 
-            // comboBoxClienteVenda
+            // comboBoxFornecedor
             // 
-            this.comboBoxClienteVenda.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBoxClienteVenda.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxClienteVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxClienteVenda.FormattingEnabled = true;
-            this.comboBoxClienteVenda.Location = new System.Drawing.Point(26, 64);
-            this.comboBoxClienteVenda.Name = "comboBoxClienteVenda";
-            this.comboBoxClienteVenda.Size = new System.Drawing.Size(151, 28);
-            this.comboBoxClienteVenda.TabIndex = 3;
+            this.comboBoxFornecedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxFornecedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxFornecedor.FormattingEnabled = true;
+            this.comboBoxFornecedor.Location = new System.Drawing.Point(26, 64);
+            this.comboBoxFornecedor.Name = "comboBoxFornecedor";
+            this.comboBoxFornecedor.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxFornecedor.TabIndex = 3;
             // 
             // label2
             // 
@@ -146,17 +149,18 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Fornecedor";
             // 
-            // btnRemoverVenda
+            // btnRemoverCompra
             // 
-            this.btnRemoverVenda.BackColor = System.Drawing.Color.Red;
-            this.btnRemoverVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoverVenda.ForeColor = System.Drawing.Color.White;
-            this.btnRemoverVenda.Location = new System.Drawing.Point(859, 684);
-            this.btnRemoverVenda.Name = "btnRemoverVenda";
-            this.btnRemoverVenda.Size = new System.Drawing.Size(105, 53);
-            this.btnRemoverVenda.TabIndex = 25;
-            this.btnRemoverVenda.Text = "Remover produto";
-            this.btnRemoverVenda.UseVisualStyleBackColor = false;
+            this.btnRemoverCompra.BackColor = System.Drawing.Color.Red;
+            this.btnRemoverCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoverCompra.ForeColor = System.Drawing.Color.White;
+            this.btnRemoverCompra.Location = new System.Drawing.Point(859, 684);
+            this.btnRemoverCompra.Name = "btnRemoverCompra";
+            this.btnRemoverCompra.Size = new System.Drawing.Size(105, 53);
+            this.btnRemoverCompra.TabIndex = 25;
+            this.btnRemoverCompra.Text = "Remover produto";
+            this.btnRemoverCompra.UseVisualStyleBackColor = false;
+            this.btnRemoverCompra.Click += new System.EventHandler(this.btnRemoverCompra_Click);
             // 
             // FrmBuscarCompraFornecedor
             // 
@@ -186,9 +190,9 @@
         private DataGridView dGVProdutos;
         private DataGridView dGVCompras;
         private GroupBox groupBox1;
-        private Button btnBuscarVendas;
-        private ComboBox comboBoxClienteVenda;
+        private Button btnBuscarCompras;
+        private ComboBox comboBoxFornecedor;
         private Label label2;
-        private Button btnRemoverVenda;
+        private Button btnRemoverCompra;
     }
 }
