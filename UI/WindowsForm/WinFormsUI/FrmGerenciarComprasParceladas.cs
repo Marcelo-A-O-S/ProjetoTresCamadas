@@ -162,7 +162,7 @@ namespace WinFormsUI
                         compraParcelada.ValorPago += valorPago;
                         compraParcelada.ParcelasRestantes = compraParcelada.ParcelasRestantes - 1;
                         var retorno = gestaoCompraParcelada.SalvarCompraParcelada(compraParcelada);
-                        //MessageBox.Show(retorno);
+                        MessageBox.Show(retorno);
                         if (compraParcelada.ValorPago >= compraParcelada.ValorTotal)
                         {
                             compra = gestaoCompra.BuscarCompraPor(x => x.Id == compraParcelada.CompraId);

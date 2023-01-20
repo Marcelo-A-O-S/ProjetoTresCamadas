@@ -123,11 +123,15 @@ namespace WinFormsUI
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
             label1.Text = "Olá, seja bem vindo "+ funcionario.Nome;
-            labelValorVenda.Text = GestaoVendas.ObterVendas().Result.Sum(x=> x.ValorPago).ToString();
+            var vendas = GestaoVendas.ObterVendas().Result;
+            labelValorVenda.Text = vendas.Sum(x=> x.ValorPago).ToString();
             labelValorCompras.Text = GestaoCompra.ObterCompras().Result.Sum(x => x.ValorPago).ToString();
+             
+            labelVendasHoje.Text = vendas.Where(x => x.DataDaVenda.Date == DateTime.Now.Date).Sum(x => x.ValorPago).ToString(); 
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
+            labelVendasHoje.Text = GestaoVendas.ObterVendas().Result.Where(x => x.DataDaVenda.Date == DateTime.Now.Date).Sum(x => x.ValorPago).ToString();
             labelValorCompras.Text = GestaoCompra.ObterCompras().Result.Sum(x => x.ValorPago).ToString();
             labelValorVenda.Text = GestaoVendas.ObterVendas().Result.Sum(x => x.ValorPago).ToString();
             FecharFormsAtivado();

@@ -17,7 +17,7 @@
 
 ## Uso
 
-O Projeto Três Camadas foi desenvolvido para ajudar na controle de vendas.
+O Projeto Três Camadas foi desenvolvido para ajudar no controle de vendas.
 
 ## Contribuição
 

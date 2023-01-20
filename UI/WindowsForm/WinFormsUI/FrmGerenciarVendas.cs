@@ -49,7 +49,7 @@ namespace WinFormsUI
         {
             dataGridViewVendas.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridViewVendas.MultiSelect = false;
-            dataGridViewVendas.ColumnCount = 9;
+            dataGridViewVendas.ColumnCount = 13;
             dataGridViewVendas.Columns[0].HeaderText = "Id";
             dataGridViewVendas.Columns[0].DataPropertyName = "Id";
             dataGridViewVendas.Columns[0].Name = "Id";
@@ -79,10 +79,27 @@ namespace WinFormsUI
             dataGridViewVendas.Columns[7].HeaderText = "Nome do Cliente";
             dataGridViewVendas.Columns[7].DataPropertyName = "NomeCliente";
             dataGridViewVendas.Columns[7].Name = "NomeCliente";
+            dataGridViewVendas.Columns[7].Width = 150;
             dataGridViewVendas.Columns[8].HeaderText = "Valor total do produto";
             dataGridViewVendas.Columns[8].DataPropertyName = "ValorTotalProduto";
             dataGridViewVendas.Columns[8].Name = "ValorTotalProduto";
-           
+            dataGridViewVendas.Columns[9].HeaderText = "cliente";
+            dataGridViewVendas.Columns[9].DataPropertyName = "cliente";
+            dataGridViewVendas.Columns[9].Name = "cliente";
+            dataGridViewVendas.Columns[9].Visible = false;
+            dataGridViewVendas.Columns[10].HeaderText = "venda";
+            dataGridViewVendas.Columns[10].DataPropertyName = "venda";
+            dataGridViewVendas.Columns[10].Name = "venda";
+            dataGridViewVendas.Columns[10].Visible = false;
+            dataGridViewVendas.Columns[11].HeaderText = "categoria";
+            dataGridViewVendas.Columns[11].DataPropertyName = "categoria";
+            dataGridViewVendas.Columns[11].Name = "categoria";
+            dataGridViewVendas.Columns[11].Visible = false;
+            dataGridViewVendas.Columns[12].HeaderText = "VendaId";
+            dataGridViewVendas.Columns[12].DataPropertyName = "VendaId";
+            dataGridViewVendas.Columns[12].Name = "VendaId";
+            dataGridViewVendas.Columns[12].Visible = false;
+
         }
         private void dataGridViewVendas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
