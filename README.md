@@ -1,6 +1,6 @@
 # Projeto três camadas MVC
 
- Esse projeto foi feito pensando em aprimorar minhas técnicas de programação e estruturação de projetos para ter noção de como aplicar em ambientes mais reais!
+ Esse projeto foi feito pensando em aprimorar minhas técnicas de programação e estruturação de projetos para ter noção de como aplicar em ambientes mais reais!  
  Foi desenvolvido usando as seguintes tecnologias: .NET Core 6, Windows Form, Entity Framework, Sql Server.
 
 ## Recursos
@@ -33,29 +33,29 @@ Contribuições são bem-vindas! Para contribuir, siga estes passos:
 
 Cadastrar Cliente  
 Editar Cadastro Cliente  
-Remover Cadastro Cliente.
-Cadastrar Funcionario.
-Editar Cadastro Funcionario.
-Remover Cadastro Funcionario.
-Cadastrar Fornecedor.
-Editar Cadastro Fornecedor.
-Remover Cadastro Fornecedor.
-Cadastrar Produto.
-Editar Cadastro Produto.
-Remover Cadastro Produto.
-Cadastrar Categoria do Produto.
-Editar Cadastro da Categoria do Produto.
-Remover Cadastro da Categoria do Produto.
-Registrar Venda.
-Remover Venda.
-Registrar Produto Vendido.
-Editar Produto Vendido.
-Remover Produto Vendido.
-Registrar Compra.
-Remover Compra.
-Registrar Produto Comprado.
-Editar Produto Comprado.
-Remover Produto Comprado.
+Remover Cadastro Cliente  
+Cadastrar Funcionario  
+Editar Cadastro Funcionario  
+Remover Cadastro Funcionario  
+Cadastrar Fornecedor  
+Editar Cadastro Fornecedor  
+Remover Cadastro Fornecedor  
+Cadastrar Produto  
+Editar Cadastro Produto  
+Remover Cadastro Produto  
+Cadastrar Categoria do Produto  
+Editar Cadastro da Categoria do Produto  
+Remover Cadastro da Categoria do Produto  
+Registrar Venda  
+Remover Venda  
+Registrar Produto Vendido  
+Editar Produto Vendido  
+Remover Produto Vendido  
+Registrar Compra  
+Remover Compra  
+Registrar Produto Comprado  
+Editar Produto Comprado  
+Remover Produto Comprado  
 
 ## Apresentação do Projeto
 
