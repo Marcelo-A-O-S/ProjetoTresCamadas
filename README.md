@@ -31,31 +31,31 @@ Contribuições são bem-vindas! Para contribuir, siga estes passos:
 
 ## Funcionalidades
 
-Cadastrar Cliente
-Editar Cadastro Cliente
-Remover Cadastro Cliente
-Cadastrar Funcionario
-Editar Cadastro Funcionario
-Remover Cadastro Funcionario
-Cadastrar Fornecedor
-Editar Cadastro Fornecedor
-Remover Cadastro Fornecedor
-Cadastrar Produto
-Editar Cadastro Produto
-Remover Cadastro Produto
-Cadastrar Categoria do Produto
-Editar Cadastro da Categoria do Produto
-Remover Cadastro da Categoria do Produto
-Registrar Venda
-Remover Venda
-Registrar Produto Vendido
-Editar Produto Vendido
-Remover Produto Vendido
-Registrar Compra
-Remover Compra
-Registrar Produto Comprado
-Editar Produto Comprado
-Remover Produto Comprado
+Cadastrar Cliente.
+Editar Cadastro Cliente.
+Remover Cadastro Cliente.
+Cadastrar Funcionario.
+Editar Cadastro Funcionario.
+Remover Cadastro Funcionario.
+Cadastrar Fornecedor.
+Editar Cadastro Fornecedor.
+Remover Cadastro Fornecedor.
+Cadastrar Produto.
+Editar Cadastro Produto.
+Remover Cadastro Produto.
+Cadastrar Categoria do Produto.
+Editar Cadastro da Categoria do Produto.
+Remover Cadastro da Categoria do Produto.
+Registrar Venda.
+Remover Venda.
+Registrar Produto Vendido.
+Editar Produto Vendido.
+Remover Produto Vendido.
+Registrar Compra.
+Remover Compra.
+Registrar Produto Comprado.
+Editar Produto Comprado.
+Remover Produto Comprado.
 
 ## Apresentação do Projeto
 
