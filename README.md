@@ -31,7 +31,7 @@ Contribuições são bem-vindas! Para contribuir, siga estes passos:
 
 ## Funcionalidades
 
-Cadastrar Cliente.
+Cadastrar Cliente__
 Editar Cadastro Cliente.
 Remover Cadastro Cliente.
 Cadastrar Funcionario.
