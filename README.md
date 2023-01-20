@@ -31,9 +31,11 @@ Contribuições são bem-vindas! Para contribuir, siga estes passos:
 
 ## Funcionalidades
 
+
 Cadastrar Cliente  
 Editar Cadastro Cliente  
 Remover Cadastro Cliente  
+Autenticação de Funcionario  
 Cadastrar Funcionario  
 Editar Cadastro Funcionario  
 Remover Cadastro Funcionario  
@@ -51,11 +53,13 @@ Remover Venda
 Registrar Produto Vendido  
 Editar Produto Vendido  
 Remover Produto Vendido  
+Buscar Venda por Cliente  
 Registrar Compra  
 Remover Compra  
 Registrar Produto Comprado  
 Editar Produto Comprado  
 Remover Produto Comprado  
+Buscar Compra por Fornecedor
 
 ## Apresentação do Projeto
 
