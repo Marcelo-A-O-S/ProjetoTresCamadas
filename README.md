@@ -60,6 +60,11 @@ Registrar Produto Comprado
 Editar Produto Comprado  
 Desfazer Produto Comprado  
 Buscar Compra por Fornecedor
+Valor do total de vendas 
+Valor de vendas diarias
+Valor do total de compras
+Valor de compras diarias
+
 
 ## Apresentação do Projeto
 
