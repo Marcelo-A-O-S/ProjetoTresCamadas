@@ -68,7 +68,8 @@ Valor de compras diarias
 
 ## Apresentação do Projeto
 
-![CaraDoProjeto](https://user-images.githubusercontent.com/77033790/212201141-d0ee2a37-e10d-487a-9032-6d9a50846c54.PNG)
+![Recording 2023-01-23 at 17 48 54](https://user-images.githubusercontent.com/77033790/214146934-60e885c8-f13e-4443-90bc-1f937494bb78.gif)
+
 
 ## Licença
 
