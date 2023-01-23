@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGerenciarVendasParceladas = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPagamento = new System.Windows.Forms.TextBox();
@@ -62,7 +66,7 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(286, 634);
             this.label3.Name = "label3";
@@ -72,7 +76,7 @@
             // 
             // textBoxPagamento
             // 
-            this.textBoxPagamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPagamento.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxPagamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPagamento.Location = new System.Drawing.Point(284, 660);
             this.textBoxPagamento.Name = "textBoxPagamento";
@@ -81,7 +85,7 @@
             // 
             // btnPagarParcela
             // 
-            this.btnPagarParcela.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPagarParcela.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnPagarParcela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPagarParcela.Location = new System.Drawing.Point(662, 626);
             this.btnPagarParcela.Name = "btnPagarParcela";
@@ -93,7 +97,7 @@
             // 
             // btnAbaterRegistro
             // 
-            this.btnAbaterRegistro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAbaterRegistro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnAbaterRegistro.BackColor = System.Drawing.Color.Navy;
             this.btnAbaterRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbaterRegistro.ForeColor = System.Drawing.Color.White;
@@ -107,7 +111,7 @@
             // 
             // btnRemoverRegistro
             // 
-            this.btnRemoverRegistro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRemoverRegistro.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnRemoverRegistro.BackColor = System.Drawing.Color.Red;
             this.btnRemoverRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverRegistro.ForeColor = System.Drawing.Color.White;
@@ -121,7 +125,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(39, 381);
             this.label2.Name = "label2";
@@ -131,7 +135,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(39, 13);
             this.label1.Name = "label1";
@@ -142,8 +146,28 @@
             // 
             // dGVInfoParcela
             // 
-            this.dGVInfoParcela.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dGVInfoParcela.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dGVInfoParcela.BackgroundColor = System.Drawing.Color.White;
+            this.dGVInfoParcela.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVInfoParcela.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dGVInfoParcela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVInfoParcela.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dGVInfoParcela.EnableHeadersVisualStyles = false;
+            this.dGVInfoParcela.GridColor = System.Drawing.Color.Blue;
             this.dGVInfoParcela.Location = new System.Drawing.Point(39, 415);
             this.dGVInfoParcela.Name = "dGVInfoParcela";
             this.dGVInfoParcela.RowHeadersWidth = 51;
@@ -154,8 +178,28 @@
             // 
             // dGVRegistrosVendasParceladas
             // 
-            this.dGVRegistrosVendasParceladas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dGVRegistrosVendasParceladas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dGVRegistrosVendasParceladas.BackgroundColor = System.Drawing.Color.White;
+            this.dGVRegistrosVendasParceladas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVRegistrosVendasParceladas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dGVRegistrosVendasParceladas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVRegistrosVendasParceladas.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dGVRegistrosVendasParceladas.EnableHeadersVisualStyles = false;
+            this.dGVRegistrosVendasParceladas.GridColor = System.Drawing.Color.Blue;
             this.dGVRegistrosVendasParceladas.Location = new System.Drawing.Point(39, 49);
             this.dGVRegistrosVendasParceladas.Name = "dGVRegistrosVendasParceladas";
             this.dGVRegistrosVendasParceladas.RowHeadersWidth = 51;

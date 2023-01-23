@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxPagamento = new System.Windows.Forms.TextBox();
             this.btnPagarParcelaCompra = new System.Windows.Forms.Button();
             this.btnAbaterRegistro = new System.Windows.Forms.Button();
             this.btnRemoverRegistro = new System.Windows.Forms.Button();
@@ -36,8 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dGVInfoCompraParcela = new System.Windows.Forms.DataGridView();
             this.dGVRegistrosComprasParceladas = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxPagamento = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVInfoCompraParcela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVRegistrosComprasParceladas)).BeginInit();
@@ -59,6 +63,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1010, 745);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(259, 648);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(161, 20);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Pagamento da parcela:";
+            // 
+            // textBoxPagamento
+            // 
+            this.textBoxPagamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPagamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPagamento.Location = new System.Drawing.Point(257, 674);
+            this.textBoxPagamento.Name = "textBoxPagamento";
+            this.textBoxPagamento.Size = new System.Drawing.Size(164, 20);
+            this.textBoxPagamento.TabIndex = 28;
             // 
             // btnPagarParcelaCompra
             // 
@@ -102,7 +125,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(38, 403);
             this.label2.Name = "label2";
@@ -112,7 +135,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 35);
             this.label1.Name = "label1";
@@ -123,8 +146,28 @@
             // 
             // dGVInfoCompraParcela
             // 
-            this.dGVInfoCompraParcela.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dGVInfoCompraParcela.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dGVInfoCompraParcela.BackgroundColor = System.Drawing.Color.White;
+            this.dGVInfoCompraParcela.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVInfoCompraParcela.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dGVInfoCompraParcela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVInfoCompraParcela.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dGVInfoCompraParcela.EnableHeadersVisualStyles = false;
+            this.dGVInfoCompraParcela.GridColor = System.Drawing.Color.Blue;
             this.dGVInfoCompraParcela.Location = new System.Drawing.Point(38, 437);
             this.dGVInfoCompraParcela.Name = "dGVInfoCompraParcela";
             this.dGVInfoCompraParcela.RowHeadersWidth = 51;
@@ -135,8 +178,28 @@
             // 
             // dGVRegistrosComprasParceladas
             // 
-            this.dGVRegistrosComprasParceladas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dGVRegistrosComprasParceladas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dGVRegistrosComprasParceladas.BackgroundColor = System.Drawing.Color.White;
+            this.dGVRegistrosComprasParceladas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVRegistrosComprasParceladas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dGVRegistrosComprasParceladas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVRegistrosComprasParceladas.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dGVRegistrosComprasParceladas.EnableHeadersVisualStyles = false;
+            this.dGVRegistrosComprasParceladas.GridColor = System.Drawing.Color.Blue;
             this.dGVRegistrosComprasParceladas.Location = new System.Drawing.Point(38, 71);
             this.dGVRegistrosComprasParceladas.Name = "dGVRegistrosComprasParceladas";
             this.dGVRegistrosComprasParceladas.RowHeadersWidth = 51;
@@ -144,25 +207,6 @@
             this.dGVRegistrosComprasParceladas.Size = new System.Drawing.Size(935, 312);
             this.dGVRegistrosComprasParceladas.TabIndex = 26;
             this.dGVRegistrosComprasParceladas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dGVRegistrosComprasParceladas_CellMouseClick);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(259, 648);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 20);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Pagamento da parcela:";
-            // 
-            // textBoxPagamento
-            // 
-            this.textBoxPagamento.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPagamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPagamento.Location = new System.Drawing.Point(257, 674);
-            this.textBoxPagamento.Name = "textBoxPagamento";
-            this.textBoxPagamento.Size = new System.Drawing.Size(164, 20);
-            this.textBoxPagamento.TabIndex = 28;
             // 
             // FrmGerenciarComprasParceladas
             // 

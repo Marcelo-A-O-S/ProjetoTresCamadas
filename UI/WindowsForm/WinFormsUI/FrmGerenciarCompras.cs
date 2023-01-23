@@ -54,11 +54,11 @@ namespace WinFormsUI
                 dataGridViewCompras.Columns[1].HeaderText = "Nome do Produto";
                 dataGridViewCompras.Columns[1].DataPropertyName = "NomeProduto";
                 dataGridViewCompras.Columns[1].Name = "NomeProduto";
-                dataGridViewCompras.Columns[1].Width = 180;
+                dataGridViewCompras.Columns[1].Width = 250;
                 dataGridViewCompras.Columns[2].HeaderText = "ValorProduto";
                 dataGridViewCompras.Columns[2].DataPropertyName = "ValorProduto";
                 dataGridViewCompras.Columns[2].Name = "ValorProduto";
-                dataGridViewCompras.Columns[2].Width = 180;
+                dataGridViewCompras.Columns[2].Width = 250;
                 dataGridViewCompras.Columns[3].HeaderText = "Categoria";
                 dataGridViewCompras.Columns[3].DataPropertyName = "CategoriaId";
                 dataGridViewCompras.Columns[3].Name = "CategoriaId";
@@ -66,9 +66,11 @@ namespace WinFormsUI
                 dataGridViewCompras.Columns[4].HeaderText = "Nome da Categoria";
                 dataGridViewCompras.Columns[4].DataPropertyName = "CategoriaNome";
                 dataGridViewCompras.Columns[4].Name = "CategoriaNome";
+                dataGridViewCompras.Columns[4].Width = 250;
                 dataGridViewCompras.Columns[5].HeaderText = "Quantidade de Produtos";
                 dataGridViewCompras.Columns[5].DataPropertyName = "QuantidadeProdutos";
                 dataGridViewCompras.Columns[5].Name = "QuantidadeProdutos";
+                dataGridViewCompras.Columns[5].Width = 250;
                 dataGridViewCompras.Columns[6].HeaderText = "FornecedorId";
                 dataGridViewCompras.Columns[6].DataPropertyName = "FornecedorId";
                 dataGridViewCompras.Columns[6].Name = "FornecedorId";
@@ -92,10 +94,11 @@ namespace WinFormsUI
                 dataGridViewCompras.Columns[11].HeaderText = "Nome Fantasia";
                 dataGridViewCompras.Columns[11].DataPropertyName = "NomeFornecedor";
                 dataGridViewCompras.Columns[11].Name = "NomeFornecedor";
-                dataGridViewCompras.Columns[11].Width = 150;
+                dataGridViewCompras.Columns[11].Width = 245;
                 dataGridViewCompras.Columns[12].HeaderText = "Valor total do produto";
                 dataGridViewCompras.Columns[12].DataPropertyName = "ValorTotalProduto";
                 dataGridViewCompras.Columns[12].Name = "ValorTotalProduto";
+                dataGridViewCompras.Columns[12].Width = 245;
             }
             catch(Exception erro)
             {
@@ -256,7 +259,7 @@ namespace WinFormsUI
                             compraParcelada.ParcelasRestantes = compraParcelada.QuantidadeParcelas - 1;
                             compraParcelada.ValorDaParcela = compra.ValorTotal / (compraParcelada.QuantidadeParcelas);
                             compraParcelada.ValorTotal = compra.ValorTotal;
-                            compraParcelada.ValorRestante = compra.ValorPago - compraParcelada.ValorTotal;
+                            compraParcelada.ValorRestante = compraParcelada.ValorTotal - compra.ValorPago;
                             compraParcelada.MesInicial = DateTime.Now.Month;
                             compraParcelada.MesFinal = DateTime.Now.AddMonths(compraParcelada.ParcelasRestantes).Month;
                             compraParcelada.DataPagamentoInicial = compra.DataDaCompra;

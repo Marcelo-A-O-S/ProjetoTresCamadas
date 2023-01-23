@@ -49,16 +49,16 @@ Cadastrar Categoria do Produto
 Editar Cadastro da Categoria do Produto  
 Remover Cadastro da Categoria do Produto  
 Registrar Venda  
-Remover Venda  
+Desfazer Venda  
 Registrar Produto Vendido  
 Editar Produto Vendido  
-Remover Produto Vendido  
+Desfazer Produto Vendido  
 Buscar Venda por Cliente  
 Registrar Compra  
-Remover Compra  
+Desfazer Compra  
 Registrar Produto Comprado  
 Editar Produto Comprado  
-Remover Produto Comprado  
+Desfazer Produto Comprado  
 Buscar Compra por Fornecedor
 
 ## Apresentação do Projeto

@@ -20,10 +20,11 @@ namespace WinFormsUI
         {
             dataGridViewProdutos.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridViewProdutos.MultiSelect = false;
-            dataGridViewProdutos.ColumnCount = 6;
+            dataGridViewProdutos.ColumnCount = 7;
             dataGridViewProdutos.Columns[0].HeaderText = "Id";
             dataGridViewProdutos.Columns[0].DataPropertyName = "Id";
             dataGridViewProdutos.Columns[0].Name = "Id";
+            dataGridViewProdutos.Columns[0].Visible = false;
             dataGridViewProdutos.Columns[1].HeaderText = "Nome do Produto";
             dataGridViewProdutos.Columns[1].DataPropertyName = "Nome";
             dataGridViewProdutos.Columns[1].Name = "Nome";
@@ -31,7 +32,7 @@ namespace WinFormsUI
             dataGridViewProdutos.Columns[2].HeaderText = "Descricao";
             dataGridViewProdutos.Columns[2].DataPropertyName = "Descricao";
             dataGridViewProdutos.Columns[2].Name = "Descricao";
-            dataGridViewProdutos.Columns[2].Width = 230;
+            dataGridViewProdutos.Columns[2].Width = 270;
             dataGridViewProdutos.Columns[3].HeaderText = "Categoria";
             dataGridViewProdutos.Columns[3].DataPropertyName = "CategoriaId";
             dataGridViewProdutos.Columns[3].Name = "CategoriaId";
@@ -41,6 +42,11 @@ namespace WinFormsUI
             dataGridViewProdutos.Columns[5].HeaderText = "Preco";
             dataGridViewProdutos.Columns[5].DataPropertyName = "Preco";
             dataGridViewProdutos.Columns[5].Name = "Preco";
+            dataGridViewProdutos.Columns[5].Width = 180;
+            dataGridViewProdutos.Columns[6].HeaderText = "categoria";
+            dataGridViewProdutos.Columns[6].DataPropertyName = "categoria";
+            dataGridViewProdutos.Columns[6].Name = "categoria";
+            dataGridViewProdutos.Columns[6].Visible = false;
             RecarregarGrid();
             RecarregarComboBoxCategoria();
             

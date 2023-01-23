@@ -12,7 +12,6 @@ namespace WinFormsUI
         {
             InitializeComponent();
         }
-
         private void btnCadastrarFuncionario_Click(object sender, EventArgs e)
         {
             funcionario.Id = 0;
@@ -38,9 +37,11 @@ namespace WinFormsUI
             dataGridViewFuncionario.Columns[0].HeaderText = "Id";
             dataGridViewFuncionario.Columns[0].DataPropertyName = "Id";
             dataGridViewFuncionario.Columns[0].Name = "Id";
+            dataGridViewFuncionario.Columns[0].Visible= false;
             dataGridViewFuncionario.Columns[1].HeaderText = "Nome";
             dataGridViewFuncionario.Columns[1].DataPropertyName = "Nome";
             dataGridViewFuncionario.Columns[1].Name = "Nome";
+            dataGridViewFuncionario.Columns[1].Width = 210;
             dataGridViewFuncionario.Columns[2].HeaderText = "CPF";
             dataGridViewFuncionario.Columns[2].DataPropertyName = "CPF";
             dataGridViewFuncionario.Columns[2].Name = "CPF";
@@ -50,12 +51,15 @@ namespace WinFormsUI
             dataGridViewFuncionario.Columns[4].HeaderText = "Cidade";
             dataGridViewFuncionario.Columns[4].DataPropertyName = "Cidade";
             dataGridViewFuncionario.Columns[4].Name = "Cidade";
+            dataGridViewFuncionario.Columns[4].Width = 220;
             dataGridViewFuncionario.Columns[5].HeaderText = "Rua";
             dataGridViewFuncionario.Columns[5].DataPropertyName = "Rua";
             dataGridViewFuncionario.Columns[5].Name = "Rua";
+            dataGridViewFuncionario.Columns[5].Width = 220;
             dataGridViewFuncionario.Columns[6].HeaderText = "Bairro";
             dataGridViewFuncionario.Columns[6].DataPropertyName = "Bairro";
             dataGridViewFuncionario.Columns[6].Name = "Bairro";
+            dataGridViewFuncionario.Columns[6].Width = 210;
             dataGridViewFuncionario.Columns[7].HeaderText = "Numero da Casa";
             dataGridViewFuncionario.Columns[7].DataPropertyName = "Numeracao";
             dataGridViewFuncionario.Columns[7].Name = "Numero da Casa";

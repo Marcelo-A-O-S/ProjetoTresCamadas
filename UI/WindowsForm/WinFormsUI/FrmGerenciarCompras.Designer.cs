@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGerenciarCompras = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxValorPago = new System.Windows.Forms.TextBox();
@@ -78,7 +80,7 @@
             // 
             // label9
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(592, 676);
             this.label9.Name = "label9";
@@ -88,7 +90,7 @@
             // 
             // textBoxValorPago
             // 
-            this.textBoxValorPago.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxValorPago.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxValorPago.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxValorPago.Location = new System.Drawing.Point(590, 700);
             this.textBoxValorPago.Name = "textBoxValorPago";
@@ -97,7 +99,7 @@
             // 
             // labelValorTotal
             // 
-            this.labelValorTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelValorTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelValorTotal.AutoSize = true;
             this.labelValorTotal.ForeColor = System.Drawing.Color.Red;
             this.labelValorTotal.Location = new System.Drawing.Point(193, 682);
@@ -108,7 +110,7 @@
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(35, 682);
             this.label8.Name = "label8";
@@ -118,7 +120,7 @@
             // 
             // btnLimparCompras
             // 
-            this.btnLimparCompras.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLimparCompras.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnLimparCompras.BackColor = System.Drawing.Color.Red;
             this.btnLimparCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparCompras.ForeColor = System.Drawing.Color.White;
@@ -132,7 +134,7 @@
             // 
             // textBoxParcelas
             // 
-            this.textBoxParcelas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxParcelas.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxParcelas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxParcelas.Location = new System.Drawing.Point(418, 700);
             this.textBoxParcelas.Name = "textBoxParcelas";
@@ -142,7 +144,7 @@
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(417, 674);
             this.label7.Name = "label7";
@@ -152,7 +154,7 @@
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(245, 674);
             this.label6.Name = "label6";
@@ -162,7 +164,7 @@
             // 
             // comboBoxPagamento
             // 
-            this.comboBoxPagamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxPagamento.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.comboBoxPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxPagamento.FormattingEnabled = true;
             this.comboBoxPagamento.Items.AddRange(new object[] {
@@ -179,7 +181,7 @@
             // 
             // btnFinalizarCompra
             // 
-            this.btnFinalizarCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnFinalizarCompra.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnFinalizarCompra.BackColor = System.Drawing.Color.Navy;
             this.btnFinalizarCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinalizarCompra.ForeColor = System.Drawing.Color.White;
@@ -193,8 +195,28 @@
             // 
             // dataGridViewCompras
             // 
-            this.dataGridViewCompras.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridViewCompras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewCompras.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewCompras.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewCompras.EnableHeadersVisualStyles = false;
+            this.dataGridViewCompras.GridColor = System.Drawing.Color.Blue;
             this.dataGridViewCompras.Location = new System.Drawing.Point(35, 264);
             this.dataGridViewCompras.Name = "dataGridViewCompras";
             this.dataGridViewCompras.RowHeadersWidth = 51;

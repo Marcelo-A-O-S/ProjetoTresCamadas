@@ -39,27 +39,35 @@ namespace WinFormsUI
                 dGVInfoParcela.Columns[1].HeaderText = "Quantidade de Parcelas";
                 dGVInfoParcela.Columns[1].DataPropertyName = "QuantidadeParcelas";
                 dGVInfoParcela.Columns[1].Name = "QuantidadeParcelas";
-                dGVInfoParcela.Columns[2].HeaderText = "Quantidade de Parcelas restantes";
+                dGVInfoParcela.Columns[1].Width = 195;
+                dGVInfoParcela.Columns[2].HeaderText = "Parcelas pendentes";
                 dGVInfoParcela.Columns[2].DataPropertyName = "ParcelasRestantes";
                 dGVInfoParcela.Columns[2].Name = "ParcelasRestantes";
+                dGVInfoParcela.Columns[2].Width = 155;
                 dGVInfoParcela.Columns[3].HeaderText = "Valor das parcelas";
                 dGVInfoParcela.Columns[3].DataPropertyName = "ValorDaParcela";
                 dGVInfoParcela.Columns[3].Name = "ValorDaParcela";
-                dGVInfoParcela.Columns[4].HeaderText = "Valor restante a ser pago";
+                dGVInfoParcela.Columns[3].Width = 150;
+                dGVInfoParcela.Columns[4].HeaderText = "Valor Restante";
                 dGVInfoParcela.Columns[4].DataPropertyName = "ValorRestante";
                 dGVInfoParcela.Columns[4].Name = "ValorRestante";
-                dGVInfoParcela.Columns[5].HeaderText = "Valor total da venda";
+                dGVInfoParcela.Columns[4].Width = 150;
+                dGVInfoParcela.Columns[5].HeaderText = "Valor total";
                 dGVInfoParcela.Columns[5].DataPropertyName = "ValorTotal";
                 dGVInfoParcela.Columns[5].Name = "ValorTotal";
-                dGVInfoParcela.Columns[6].HeaderText = "Mês de realizacão da venda";
+                dGVInfoParcela.Columns[5].Width = 150;
+                dGVInfoParcela.Columns[6].HeaderText = "Mês Inicial";
                 dGVInfoParcela.Columns[6].DataPropertyName = "MesInicial";
                 dGVInfoParcela.Columns[6].Name = "MesInicial";
-                dGVInfoParcela.Columns[7].HeaderText = "Mês final de pagamento";
+                dGVInfoParcela.Columns[6].Width = 150;
+                dGVInfoParcela.Columns[7].HeaderText = "Mês Final";
                 dGVInfoParcela.Columns[7].DataPropertyName = "MesFinal";
                 dGVInfoParcela.Columns[7].Name = "MesFinal";
+                dGVInfoParcela.Columns[7].Width = 150;
                 dGVInfoParcela.Columns[8].HeaderText = "Data do primeiro pagamento";
                 dGVInfoParcela.Columns[8].DataPropertyName = "DataPagamentoInicial";
                 dGVInfoParcela.Columns[8].Name = "DataPagamentoInicial";
+                dGVInfoParcela.Columns[8].Width = 240;
                 dGVInfoParcela.Columns[9].HeaderText = "VendaId";
                 dGVInfoParcela.Columns[9].DataPropertyName = "VendaId";
                 dGVInfoParcela.Columns[9].Name = "VendaId";
@@ -71,7 +79,9 @@ namespace WinFormsUI
                 dGVInfoParcela.Columns[11].HeaderText = "Valor Pago";
                 dGVInfoParcela.Columns[11].DataPropertyName = "ValorPago";
                 dGVInfoParcela.Columns[11].Name = "ValorPago";
-            }catch(Exception erro)
+                dGVInfoParcela.Columns[11].Width = 150;
+            }
+            catch(Exception erro)
             {
                 MessageBox.Show(erro.Message);
             }
@@ -95,11 +105,11 @@ namespace WinFormsUI
                 dGVRegistrosVendasParceladas.Columns[1].HeaderText = "Tipo de Pagamento";
                 dGVRegistrosVendasParceladas.Columns[1].DataPropertyName = "TipoDePagamento";
                 dGVRegistrosVendasParceladas.Columns[1].Name = "TipoDePagamento";
-                dGVRegistrosVendasParceladas.Columns[1].Width = 150;
+                dGVRegistrosVendasParceladas.Columns[1].Width = 160;
                 dGVRegistrosVendasParceladas.Columns[2].HeaderText = "Quantidade de Produtos vendidos";
                 dGVRegistrosVendasParceladas.Columns[2].DataPropertyName = "QuantidadeVendidos";
                 dGVRegistrosVendasParceladas.Columns[2].Name = "QuantidadeVendidos";
-                dGVRegistrosVendasParceladas.Columns[2].Width = 150;
+                dGVRegistrosVendasParceladas.Columns[2].Width = 262;
                 dGVRegistrosVendasParceladas.Columns[3].HeaderText = "Data da venda";
                 dGVRegistrosVendasParceladas.Columns[3].DataPropertyName = "DataDaVenda";
                 dGVRegistrosVendasParceladas.Columns[3].Name = "DataDaVenda";
@@ -107,10 +117,11 @@ namespace WinFormsUI
                 dGVRegistrosVendasParceladas.Columns[4].HeaderText = "Pagamento Realizado";
                 dGVRegistrosVendasParceladas.Columns[4].DataPropertyName = "PagamentoRealizado";
                 dGVRegistrosVendasParceladas.Columns[4].Name = "PagamentoRealizado";
-                dGVRegistrosVendasParceladas.Columns[4].Width = 150;
+                dGVRegistrosVendasParceladas.Columns[4].Width = 190;
                 dGVRegistrosVendasParceladas.Columns[5].HeaderText = "Valor total da venda";
                 dGVRegistrosVendasParceladas.Columns[5].DataPropertyName = "ValorTotal";
                 dGVRegistrosVendasParceladas.Columns[5].Name = "ValorTotal";
+                dGVRegistrosVendasParceladas.Columns[5].Width = 250;
                 dGVRegistrosVendasParceladas.Columns[6].HeaderText = "ClienteId";
                 dGVRegistrosVendasParceladas.Columns[6].DataPropertyName = "ClienteId";
                 dGVRegistrosVendasParceladas.Columns[6].Name = "ClienteId";
@@ -118,6 +129,7 @@ namespace WinFormsUI
                 dGVRegistrosVendasParceladas.Columns[7].HeaderText = "Nome do Cliente";
                 dGVRegistrosVendasParceladas.Columns[7].DataPropertyName = "NomeCliente";
                 dGVRegistrosVendasParceladas.Columns[7].Name = "NomeCliente";
+                dGVRegistrosVendasParceladas.Columns[7].Width = 150;
                 dGVRegistrosVendasParceladas.Columns[8].HeaderText = "FuncionarioId";
                 dGVRegistrosVendasParceladas.Columns[8].DataPropertyName = "FuncionarioId";
                 dGVRegistrosVendasParceladas.Columns[8].Name = "FuncionarioId";
@@ -125,6 +137,7 @@ namespace WinFormsUI
                 dGVRegistrosVendasParceladas.Columns[9].HeaderText = "Nome do Funcionario";
                 dGVRegistrosVendasParceladas.Columns[9].DataPropertyName = "NomeFuncionario";
                 dGVRegistrosVendasParceladas.Columns[9].Name = "NomeFuncionario";
+                dGVRegistrosVendasParceladas.Columns[9].Width = 190;
                 dGVRegistrosVendasParceladas.Columns[10].HeaderText = "cliente";
                 dGVRegistrosVendasParceladas.Columns[10].DataPropertyName = "cliente";
                 dGVRegistrosVendasParceladas.Columns[10].Name = "cliente";
@@ -189,14 +202,14 @@ namespace WinFormsUI
                         vendaParcelada.ValorRestante = vendaParcelada.ValorRestante - valorPago;
                         vendaParcelada.ValorPago += valorPago;
                         vendaParcelada.ParcelasRestantes = vendaParcelada.ParcelasRestantes - 1;
-                        //var retorno = gestaoVendasParceladas.SalvarVendaParcelada(vendaParcelada);
-                        //MessageBox.Show(retorno);
+                        var retorno = gestaoVendasParceladas.SalvarVendaParcelada(vendaParcelada);
+                        MessageBox.Show(retorno);
                         if (vendaParcelada.ValorPago >= vendaParcelada.ValorTotal)
                         {
                             venda = await gestaoVendas.BuscarVendaPor(x => x.Id == vendaParcelada.VendaId);
                             venda.ValorPago += vendaParcelada.ValorDaParcela;
                             venda.PagamentoRealizado = true;
-                            //gestaoVendas.SalvarVenda(venda);
+                            gestaoVendas.SalvarVenda(venda);
                             RecarregarGridVendasParceladas();
                         }
                     }

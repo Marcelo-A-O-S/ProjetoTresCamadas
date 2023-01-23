@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGerenciarVendas = new System.Windows.Forms.Panel();
             this.textBoxValorPago = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -79,7 +81,7 @@
             // 
             // textBoxValorPago
             // 
-            this.textBoxValorPago.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxValorPago.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxValorPago.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxValorPago.Location = new System.Drawing.Point(608, 709);
             this.textBoxValorPago.Name = "textBoxValorPago";
@@ -88,7 +90,7 @@
             // 
             // label9
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(608, 689);
             this.label9.Name = "label9";
@@ -98,7 +100,7 @@
             // 
             // labelValorTotal
             // 
-            this.labelValorTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelValorTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelValorTotal.AutoSize = true;
             this.labelValorTotal.ForeColor = System.Drawing.Color.Red;
             this.labelValorTotal.Location = new System.Drawing.Point(187, 694);
@@ -109,7 +111,7 @@
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(35, 694);
             this.label8.Name = "label8";
@@ -119,7 +121,7 @@
             // 
             // btnLimparVendas
             // 
-            this.btnLimparVendas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLimparVendas.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnLimparVendas.BackColor = System.Drawing.Color.Red;
             this.btnLimparVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparVendas.ForeColor = System.Drawing.Color.White;
@@ -133,7 +135,7 @@
             // 
             // textBoxParcelas
             // 
-            this.textBoxParcelas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxParcelas.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxParcelas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxParcelas.Location = new System.Drawing.Point(436, 715);
             this.textBoxParcelas.Name = "textBoxParcelas";
@@ -143,7 +145,7 @@
             // 
             // btnFinalizarVenda
             // 
-            this.btnFinalizarVenda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnFinalizarVenda.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnFinalizarVenda.BackColor = System.Drawing.Color.Navy;
             this.btnFinalizarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinalizarVenda.ForeColor = System.Drawing.Color.White;
@@ -157,8 +159,28 @@
             // 
             // dataGridViewVendas
             // 
-            this.dataGridViewVendas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridViewVendas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewVendas.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewVendas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewVendas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewVendas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewVendas.EnableHeadersVisualStyles = false;
+            this.dataGridViewVendas.GridColor = System.Drawing.Color.Blue;
             this.dataGridViewVendas.Location = new System.Drawing.Point(35, 305);
             this.dataGridViewVendas.Name = "dataGridViewVendas";
             this.dataGridViewVendas.RowHeadersWidth = 51;
@@ -169,7 +191,7 @@
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(435, 689);
             this.label7.Name = "label7";
@@ -269,6 +291,7 @@
             this.comboBoxCategoria.Name = "comboBoxCategoria";
             this.comboBoxCategoria.Size = new System.Drawing.Size(151, 28);
             this.comboBoxCategoria.TabIndex = 5;
+            this.comboBoxCategoria.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategoria_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -305,7 +328,7 @@
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(263, 689);
             this.label6.Name = "label6";
@@ -315,7 +338,7 @@
             // 
             // comboBoxPagamento
             // 
-            this.comboBoxPagamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxPagamento.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.comboBoxPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxPagamento.FormattingEnabled = true;
             this.comboBoxPagamento.Items.AddRange(new object[] {

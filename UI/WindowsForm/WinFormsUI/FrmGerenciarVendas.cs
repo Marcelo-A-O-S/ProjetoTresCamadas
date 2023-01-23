@@ -25,6 +25,9 @@ namespace WinFormsUI
         private GestaoVendas gestaoVendas = new();
         private List<Venda> vendas = new();
         private List<ProdutoVendido> produtos = new();
+        private List<Cliente> clientes = new();
+        private List<Produto> Produtos = new();
+        private List<Categoria> categorias = new();
         private ProdutoVendido produtoVendidoAcesso = new();
         private Produto produto = new();
         private Cliente cliente = new();
@@ -36,14 +39,19 @@ namespace WinFormsUI
             InitializeComponent();
             this.funcionario = funcionario;
         }
-
         private void FrmGerenciarVendas_Load(object sender, EventArgs e)
         {
-
+            carregarDados();
             carregarComboBoxCategoria();
             carregarComboBoxProduto();
             carregarComboBoxCliente();
             carregarDgvVendaHeader();
+        }
+        private void carregarDados()
+        {
+            clientes = gestaoClientes.ObterClientes().Result.ToList();
+            Produtos = gestaoProdutos.ObterProdutos().Result.ToList();
+            categorias = gestaoCategorias.ObterCategorias().Result.ToList();
         }
         private void carregarDgvVendaHeader()
         {
@@ -57,11 +65,11 @@ namespace WinFormsUI
             dataGridViewVendas.Columns[1].HeaderText = "Nome do Produto";
             dataGridViewVendas.Columns[1].DataPropertyName = "NomeProduto";
             dataGridViewVendas.Columns[1].Name = "NomeProduto";
-            dataGridViewVendas.Columns[1].Width = 180;
+            dataGridViewVendas.Columns[1].Width = 250;
             dataGridViewVendas.Columns[2].HeaderText = "ValorProduto";
             dataGridViewVendas.Columns[2].DataPropertyName = "ValorProduto";
             dataGridViewVendas.Columns[2].Name = "ValorProduto";
-            dataGridViewVendas.Columns[2].Width = 180;
+            dataGridViewVendas.Columns[2].Width = 250;
             dataGridViewVendas.Columns[3].HeaderText = "Categoria";
             dataGridViewVendas.Columns[3].DataPropertyName = "CategoriaId";
             dataGridViewVendas.Columns[3].Name = "CategoriaId";
@@ -69,9 +77,11 @@ namespace WinFormsUI
             dataGridViewVendas.Columns[4].HeaderText = "Nome da Categoria";
             dataGridViewVendas.Columns[4].DataPropertyName = "CategoriaNome";
             dataGridViewVendas.Columns[4].Name = "CategoriaNome";
+            dataGridViewVendas.Columns[4].Width = 250;
             dataGridViewVendas.Columns[5].HeaderText = "Quantidade de Produtos";
             dataGridViewVendas.Columns[5].DataPropertyName = "QuantidadeProdutos";
             dataGridViewVendas.Columns[5].Name = "QuantidadeProdutos";
+            dataGridViewVendas.Columns[5].Width = 250;
             dataGridViewVendas.Columns[6].HeaderText = "ClienteId";
             dataGridViewVendas.Columns[6].DataPropertyName = "ClienteId";
             dataGridViewVendas.Columns[6].Name = "ClienteId";
@@ -79,10 +89,11 @@ namespace WinFormsUI
             dataGridViewVendas.Columns[7].HeaderText = "Nome do Cliente";
             dataGridViewVendas.Columns[7].DataPropertyName = "NomeCliente";
             dataGridViewVendas.Columns[7].Name = "NomeCliente";
-            dataGridViewVendas.Columns[7].Width = 150;
+            dataGridViewVendas.Columns[7].Width = 245;
             dataGridViewVendas.Columns[8].HeaderText = "Valor total do produto";
             dataGridViewVendas.Columns[8].DataPropertyName = "ValorTotalProduto";
             dataGridViewVendas.Columns[8].Name = "ValorTotalProduto";
+            dataGridViewVendas.Columns[8].Width = 245;
             dataGridViewVendas.Columns[9].HeaderText = "cliente";
             dataGridViewVendas.Columns[9].DataPropertyName = "cliente";
             dataGridViewVendas.Columns[9].Name = "cliente";
@@ -150,16 +161,18 @@ namespace WinFormsUI
         }
         private async void carregarComboBoxCliente()
         {
-            comboBoxCliente.DataSource = gestaoClientes.ObterClientes().Result.Select(x => x.Nome).ToList();
+            comboBoxCliente.DataSource = clientes.Select(x => x.Nome).ToList();
             comboBoxCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
         }
         private async void carregarComboBoxProduto()
         {
-            comboBoxProduto.DataSource = gestaoProdutos.ObterProdutos().Result.Select(x=> x.Nome).ToList();
+            var retornoCategoria = Produtos.Select(x => x.Nome).ToList();
+            comboBoxProduto.DataSource = retornoCategoria;
+            comboBoxCategoria.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
         }
         private async void carregarComboBoxCategoria()
         {
-            comboBoxCategoria.DataSource = gestaoCategorias.ObterCategorias().Result.Select(x => x.TipoCategoria).ToList();
+            comboBoxCategoria.DataSource = categorias.Select(x => x.TipoCategoria).ToList();
         }
         private void comboBoxCliente_TextUpdate(object sender, EventArgs e)
         {
@@ -301,6 +314,21 @@ namespace WinFormsUI
             }
             
             
+        }
+        private void comboBoxCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var retornoCategoria = categorias.Where(x => x.TipoCategoria == comboBoxCategoria.Text).FirstOrDefault();
+                var retornoProduto = Produtos.Where(x => x.CategoriaId == retornoCategoria.Id).Select(x => x.Nome).ToList();
+                comboBoxProduto.Text = string.Empty;
+                comboBoxProduto.DataSource = retornoProduto;
+                comboBoxProduto.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
         }
     }
 }

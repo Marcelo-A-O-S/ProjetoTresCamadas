@@ -15,6 +15,7 @@ namespace WinFormsUI
     public partial class FrmLogin : Form
     {
         FrmMenuPrincipal frmMenu;
+        private List<Funcionario> funcionarios = new();
         private Funcionario funcionario = new();
         private GestaoFuncionarios gestaoFuncionarios = new();
         public FrmLogin(FrmMenuPrincipal frmMenu)
@@ -36,7 +37,7 @@ namespace WinFormsUI
                 }
                 else
                 {
-                    funcionario = gestaoFuncionarios.ObterFuncionarios().Result.Where(x => x.Nome == textBoxNome.Text && x.Senha == textBoxSenha.Text).FirstOrDefault();
+                    funcionario = funcionarios.Where(x => x.Nome == textBoxNome.Text && x.Senha == textBoxSenha.Text).FirstOrDefault();
                     if(funcionario == null)
                     {
                         MessageBox.Show("Informe os campos corretamente");
@@ -57,6 +58,11 @@ namespace WinFormsUI
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            funcionarios = gestaoFuncionarios.ObterFuncionarios().Result.ToList();
         }
     }
 }

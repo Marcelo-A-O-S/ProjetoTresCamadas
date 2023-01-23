@@ -73,6 +73,9 @@
             this.panelUser = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.PanelContent = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.labelGastosHoje = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.labelVendasHoje = new System.Windows.Forms.Label();
             this.labeltext = new System.Windows.Forms.Label();
@@ -92,6 +95,7 @@
             this.DropdownFuncionarios.SuspendLayout();
             this.DropdownCliente.SuspendLayout();
             this.PanelContent.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -681,7 +685,8 @@
             // PanelContent
             // 
             this.PanelContent.AutoSize = true;
-            this.PanelContent.BackColor = System.Drawing.Color.FloralWhite;
+            this.PanelContent.BackColor = System.Drawing.Color.White;
+            this.PanelContent.Controls.Add(this.panel9);
             this.PanelContent.Controls.Add(this.panel6);
             this.PanelContent.Controls.Add(this.panel5);
             this.PanelContent.Controls.Add(this.panel3);
@@ -692,10 +697,43 @@
             this.PanelContent.Size = new System.Drawing.Size(918, 784);
             this.PanelContent.TabIndex = 2;
             // 
+            // panel9
+            // 
+            this.panel9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel9.Controls.Add(this.labelGastosHoje);
+            this.panel9.Controls.Add(this.label5);
+            this.panel9.Location = new System.Drawing.Point(149, 441);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(254, 160);
+            this.panel9.TabIndex = 2;
+            // 
+            // labelGastosHoje
+            // 
+            this.labelGastosHoje.AutoSize = true;
+            this.labelGastosHoje.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelGastosHoje.ForeColor = System.Drawing.Color.White;
+            this.labelGastosHoje.Location = new System.Drawing.Point(80, 57);
+            this.labelGastosHoje.Name = "labelGastosHoje";
+            this.labelGastosHoje.Size = new System.Drawing.Size(77, 38);
+            this.labelGastosHoje.TabIndex = 1;
+            this.labelGastosHoje.Text = "0000";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(45, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(147, 22);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Gastos de Hoje";
+            // 
             // panel6
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel6.BackColor = System.Drawing.Color.Cyan;
+            this.panel6.BackColor = System.Drawing.Color.Blue;
             this.panel6.Controls.Add(this.labelVendasHoje);
             this.panel6.Controls.Add(this.labeltext);
             this.panel6.Location = new System.Drawing.Point(474, 443);
@@ -827,6 +865,8 @@
             this.DropdownCliente.ResumeLayout(false);
             this.PanelContent.ResumeLayout(false);
             this.PanelContent.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -895,5 +935,8 @@
         private Panel panel6;
         private Label labelVendasHoje;
         private Label labeltext;
+        private Panel panel9;
+        private Label labelGastosHoje;
+        private Label label5;
     }
 }

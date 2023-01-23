@@ -38,16 +38,15 @@ namespace WinFormsUI
         {
             dataGridViewFornecedor.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridViewFornecedor.MultiSelect = false;
-            dataGridViewFornecedor.ColumnCount = 9;
+            dataGridViewFornecedor.ColumnCount = 10;
             dataGridViewFornecedor.Columns[0].HeaderText = "Id";
             dataGridViewFornecedor.Columns[0].DataPropertyName = "Id";
             dataGridViewFornecedor.Columns[0].Name = "Id";
-            dataGridViewFornecedor.Columns[0].HeaderText = "Razao Social";
-            dataGridViewFornecedor.Columns[0].DataPropertyName = "RazaoSocial";
-            dataGridViewFornecedor.Columns[0].Name = "RazaoSocial";
+            dataGridViewFornecedor.Columns[0].Visible = false;
             dataGridViewFornecedor.Columns[1].HeaderText = "Nome Fantasia";
             dataGridViewFornecedor.Columns[1].DataPropertyName = "NomeFantasia";
             dataGridViewFornecedor.Columns[1].Name = "NomeFantasia";
+            dataGridViewFornecedor.Columns[1].Width = 200;
             dataGridViewFornecedor.Columns[2].HeaderText = "Telefone";
             dataGridViewFornecedor.Columns[2].DataPropertyName = "Telefone";
             dataGridViewFornecedor.Columns[2].Name = "Telefone";
@@ -60,15 +59,22 @@ namespace WinFormsUI
             dataGridViewFornecedor.Columns[5].HeaderText = "Bairro";
             dataGridViewFornecedor.Columns[5].DataPropertyName = "Bairro";
             dataGridViewFornecedor.Columns[5].Name = "Bairro";
+            dataGridViewFornecedor.Columns[5].Width = 200;
             dataGridViewFornecedor.Columns[6].HeaderText = "Cidade";
             dataGridViewFornecedor.Columns[6].DataPropertyName = "Cidade";
             dataGridViewFornecedor.Columns[6].Name = "Cidade";
+            dataGridViewFornecedor.Columns[6].Width = 200;
             dataGridViewFornecedor.Columns[7].HeaderText = "CEP";
             dataGridViewFornecedor.Columns[7].DataPropertyName = "CEP";
             dataGridViewFornecedor.Columns[7].Name = "CEP";
             dataGridViewFornecedor.Columns[8].HeaderText = "Rua";
             dataGridViewFornecedor.Columns[8].DataPropertyName = "Rua";
             dataGridViewFornecedor.Columns[8].Name = "Rua";
+            dataGridViewFornecedor.Columns[8].Width = 200;
+            dataGridViewFornecedor.Columns[9].HeaderText = "Razao Social";
+            dataGridViewFornecedor.Columns[9].DataPropertyName = "RazaoSocial";
+            dataGridViewFornecedor.Columns[9].Name = "RazaoSocial";
+            dataGridViewFornecedor.Columns[9].Width = 180;
             RecarregarGrid();
         }
 
