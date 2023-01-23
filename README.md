@@ -59,7 +59,7 @@ Desfazer Compra
 Registrar Produto Comprado  
 Editar Produto Comprado  
 Desfazer Produto Comprado  
-Buscar Compra por Fornecedor
+Buscar Compra por Fornecedor  
 Valor do total de vendas   
 Valor de vendas diarias  
 Valor do total de compras  
